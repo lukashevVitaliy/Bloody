@@ -1,0 +1,139 @@
+import { React, useRef, defer, useLoaderData } from 'services/imports-npm';
+
+import { ListProductsThumbnail } from 'components/business/list-products-thumbnail';
+import { SectionMain } from 'components/business/section-main';
+import { SectionGallery } from 'components/business/section-gallery';
+import { SectionBg2 } from 'components/business/section-bg-2';
+import { SectionDescShort } from 'components/business/section-desc-short';
+import { SectionDesc } from 'components/business/section-desc';
+import { SectionBg3 } from 'components/business/section-bg-3';
+import { SectionSpecification } from 'components/business/section-specification';
+import { SectionSizeProduct } from 'components/business/section-size-product';
+import { ItemProductThumbnail } from 'components/business/item-product-thumbnail';
+import { KeyboardsSpecification } from 'components/business/section-specification/keyboards-specification';
+import { Navbar } from 'components/business/navbar';
+import Footer from 'components/business/footer/footer';
+import { useScrollbar } from 'hooks/useScrollbar';
+
+import { keyboardLoaderProps } from 'types/input-types';
+
+import {
+  getKeyboardIdBg,
+  getKeyboardIdColors,
+  getKeyboardIdDesc,
+  getKeyboardIdInfo,
+  getKeyboardIdShortDesc,
+  getKeyboardIdSize,
+  getKeyboardName,
+  getKeyboardsThumbnail,
+} from 'services/requests-keyboards';
+import {
+  IItemBackground,
+  IItemName,
+  IKeyboards,
+  ISectionDesc,
+  IItemSize,
+} from 'types/components-types';
+
+interface IKeyboardPage {
+  keyboards: IKeyboards;
+  keyboardName: IItemName;
+  background: IItemBackground;
+  colors: any;
+  shortDesc: any;
+  desc: ISectionDesc;
+  size: IItemSize;
+}
+
+const KeyboardPage = () => {
+  const { keyboards, keyboardName, background, colors, shortDesc, desc, size } =
+    useLoaderData() as unknown as IKeyboardPage;
+
+  const colorsScheme = colors?.data.attributes.ColorsSchemeKeyboard;
+  const shortDescPath = shortDesc?.data.attributes.ShortDescKeyboad;
+  const descPath = desc?.data.attributes.description;
+
+  // console.log(shortDesc);
+
+  const listWrapper = useRef<HTMLDivElement | null>(null);
+  const contentWrapper = useRef<HTMLDivElement | null>(null);
+
+  // необходимо для ref ссылок
+  const startRef = useRef<HTMLDivElement | null>(null);
+  const galleryRef = useRef<HTMLDivElement | null>(null);
+  const featuresRef = useRef<HTMLDivElement | null>(null);
+  const characteristicsRef = useRef<HTMLDivElement | null>(null);
+
+  // необходимо для скролла
+  useScrollbar(listWrapper);
+  useScrollbar(contentWrapper);
+
+  return (
+    <div className="grid grid-cols-[116px_1fr] sm:grid-cols-[156px_1fr]">
+      <div
+        className="list-thumbnail h-screen overflow-y-auto"
+        ref={listWrapper}
+      >
+        <ListProductsThumbnail classes={'w-full'}>
+          {keyboards?.data.map(({ id, attributes }) => (
+            <ItemProductThumbnail
+              key={id}
+              path={`/keyboards/${attributes.slug}`}
+              urlImageItem={`${import.meta.env.VITE_STRAPI_URL}${
+                attributes.image.data.attributes.formats.thumbnail?.url
+              }`}
+              modelItem={attributes.model}
+              classes="group w-full p-1 text-center grayscale transition-all duration-300 hover:grayscale-0"
+            />
+          ))}
+        </ListProductsThumbnail>
+      </div>
+      <div
+        className="content-product relative h-screen w-full overflow-y-auto border-l border-[#333]"
+        ref={contentWrapper}
+      >
+        <Navbar
+          startRef={startRef}
+          galleryRef={galleryRef}
+          featuresRef={featuresRef}
+          characteristicsRef={characteristicsRef}
+        />
+        <SectionMain ref={startRef} background={background}>
+          {keyboardName?.data.attributes.subtitle}
+        </SectionMain>
+        <SectionGallery
+          ref={galleryRef}
+          colors={colors}
+          colorsScheme={colorsScheme}
+        />
+        <SectionBg2 ref={featuresRef} background={background} />
+        <SectionDescShort shortDescPath={shortDescPath} />
+        <SectionDesc descPath={descPath} />
+        <SectionBg3 background={background} />
+        <SectionSpecification ref={characteristicsRef}>
+          <KeyboardsSpecification />
+        </SectionSpecification>
+        <SectionSizeProduct size={size} />
+        <Footer />
+      </div>
+    </div>
+  );
+};
+
+export const keyboardLoader = async ({ params }: keyboardLoaderProps) => {
+  const id = params.id;
+
+  return defer({
+    keyboards: await getKeyboardsThumbnail(),
+    keyboardName: await getKeyboardName(id),
+    background: await getKeyboardIdBg(id),
+    colors: await getKeyboardIdColors(id),
+    shortDesc: await getKeyboardIdShortDesc(id),
+    desc: await getKeyboardIdDesc(id),
+    info: await getKeyboardIdInfo(id),
+    size: await getKeyboardIdSize(id),
+    id,
+  });
+};
+
+export default KeyboardPage;

@@ -1,0 +1,153 @@
+import {
+  React,
+  useState,
+  useLoaderData,
+  useRef,
+  useSearchParams,
+  defer,
+} from 'services/imports-npm';
+import {
+  UniqueCpi,
+  UniqueSeries,
+  UniqueSize,
+} from 'components/ui/accordion/unique-data';
+import { ListProducts } from 'components/business/list-products';
+import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+import { TopBlock } from 'components/business/top-block';
+import { useScrollbar } from 'hooks/useScrollbar';
+import { AccordionCPI } from 'components/ui/accordion-cpi';
+import { AccordionSize } from 'components/ui/accordion-size';
+import { AccordionSeries } from 'components/ui/accordion-series';
+import { RenderItemList } from 'components/business/render-item-list';
+import Footer from 'components/business/footer/footer';
+import { IMice } from 'types/components-types';
+
+const MicePage = () => {
+  const [accordionCPI, setActiveAccordionCPI] = useState<boolean>(false);
+  const [accordionSize, setActiveAccordionSize] = useState<boolean>(false);
+  const [accordionSeries, setActiveAccordionSeries] = useState<boolean>(false);
+  const [selectCPI, setSelectCPI] = useState<null | string>(null);
+  const [selectSize, setSelectSize] = useState<null | string>(null);
+  const [selectSeries, setSelectSeries] = useState<null | string>(null);
+  // search product
+  const [searchParams, setSearchParams] = useSearchParams();
+  const productQuery = searchParams.get('product') || '';
+  // get products
+  const { mice } = useLoaderData() as { mice: IMice };
+
+  // console.log(mice);
+
+  const uniqueCPI = UniqueCpi(mice);
+  const uniqueSize = UniqueSize(mice);
+  const uniqueSeries = UniqueSeries(mice);
+
+  // custom scroll
+  const contentWrapper = useRef<HTMLDivElement | null>(null);
+  useScrollbar(contentWrapper);
+
+  return (
+    <div className="content-product h-screen" ref={contentWrapper}>
+      <TopBlock
+        title="Мыши"
+        statusSearch={true}
+        classes="flex md:flex-row h-[128px] md:h-[148px] w-full items-center flex-col justify-between px-4 border-b border-[var(--black-col-4)]"
+        setSearchParams={setSearchParams}
+        productQuery={productQuery}
+      />
+      <div className="relative flex flex-col md:flex-row">
+        <SidebarMenuLeft
+          classes={
+            'min-w-[230px] border-r-4 border-[var(--black-col-4)] bg-[var(--black-col-3)]'
+          }
+        >
+          <AccordionCPI
+            uniqueCPI={uniqueCPI}
+            accordionCPI={accordionCPI}
+            onClick={() => setActiveAccordionCPI(!accordionCPI)}
+            setSelectCPI={setSelectCPI}
+          />
+          <AccordionSize
+            uniqueSize={uniqueSize}
+            accordionSize={accordionSize}
+            onClick={() => setActiveAccordionSize(!accordionSize)}
+            setSelectSize={setSelectSize}
+          />
+          <AccordionSeries
+            uniqueSeries={uniqueSeries}
+            accordionSeries={accordionSeries}
+            onClick={() => setActiveAccordionSeries(!accordionSeries)}
+            setSelectSeries={setSelectSeries}
+          />
+        </SidebarMenuLeft>
+
+        <div>
+          <ListProducts
+            classes="grid auto-cols-fr auto-rows-fr grid-cols-2 md:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4"
+            tag={'div'}
+          >
+            {mice &&
+              (selectCPI
+                ? RenderItemList(
+                    mice.data.filter(
+                      (mouse) =>
+                        mouse.attributes.cpi === selectCPI &&
+                        mouse.attributes.model
+                          .toLowerCase()
+                          .includes(productQuery)
+                    )
+                  )
+                : selectSize
+                ? RenderItemList(
+                    mice.data.filter(
+                      (mouse) =>
+                        mouse.attributes.size === selectSize &&
+                        mouse.attributes.model
+                          .toLowerCase()
+                          .includes(productQuery)
+                    )
+                  )
+                : selectSeries
+                ? RenderItemList(
+                    mice.data.filter(
+                      (mouse) =>
+                        mouse.attributes.series === selectSeries &&
+                        mouse.attributes.model
+                          .toLowerCase()
+                          .includes(productQuery)
+                    )
+                  )
+                : RenderItemList(
+                    mice.data.filter((mouse) =>
+                      mouse.attributes.model
+                        .toLowerCase()
+                        .includes(productQuery)
+                    )
+                  ))}
+          </ListProducts>
+          <Footer />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const getMice = async () => {
+  const response = await fetch(
+    `${import.meta.env.VITE_STRAPI_URL}/api/list-mice?populate=*`
+  );
+
+  if (!response.ok) {
+    throw new Response('', {
+      status: response.status,
+      statusText: 'The problem is related to routing !!!',
+    });
+  }
+
+  return response.json();
+};
+
+export const miceLoader = async () => {
+  return defer({ mice: await getMice() });
+};
+
+export default MicePage;

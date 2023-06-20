@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --red-col-1: #ff0013;
+  --red-col-2: #d61f26;
+  --black-col-1: #000;
+  --black-col-2: #1a1a1d;
+  --black-col-3: #111;
+  --black-col-4: #252529;
+  --white-col: #fff;
+  --gray-col-1: #73737c;
+  --gray-col-2: #adadad;
+
+  color-scheme: light dark;
+  color: var(--white-col);
+  background-color: var(--black-col-1);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@layer base {
+  h1 {
+    @apply text-[42px] font-medium uppercase text-[var(--red-col-1)] lg:text-[52px];
+  }
+  h2 {
+    @apply text-2xl text-[var(--white-col)] transition-all duration-300 group-hover:text-[var(--red-col-1)] md:text-[30px];
+  }
+  h3 {
+    @apply text-lg font-medium uppercase text-[var(--gray-col-2)] md:text-2xl;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
+img {
+  max-width: 100%;
+  min-height: auto;
+}
+
+.home .swiper-pagination {
+  @apply absolute top-0 left-0 z-10 flex h-10 w-full;
+}
+.home .swiper-pagination .swiper-pagination-bullet {
+  @apply mx-0  flex h-10 w-full items-center justify-center rounded-none bg-[var(--black-col-2)] text-[var(--gray-col-1)] opacity-100 transition-all duration-300 hover:bg-[#323236];
+}
+.home .swiper-pagination .swiper-pagination-bullet-active {
+  @apply bg-[var(--black-col-2)] text-[var(--red-col-1)] opacity-100;
+}
+.home .autoplay-progress {
+  @apply absolute top-5 right-5 z-10 flex h-12 w-12 items-center justify-center font-bold text-[var(--red-col-1)];
+}
+.home .autoplay-progress svg {
+  --progress: 0;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  stroke-width: 4px;
+  stroke: var(--red-col-1);
+  fill: none;
+  stroke-dashoffset: calc(125.6 * (1 - var(--progress)));
+  stroke-dasharray: 125.6;
+  transform: rotate(-90deg);
+}
+
+.list-thumbnail
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  max-height: 5px;
+  min-height: 30px;
+  background: var(--red-col-1);
+}
+
+.content-product
+  > .os-scrollbar-vertical
+  > .os-scrollbar-track
+  > .os-scrollbar-handle {
+  max-height: 5px;
+  min-height: 30px;
+  background: var(--red-col-1);
+}
+
+.list-thumbnail > .os-scrollbar-vertical {
+  max-width: 7px;
+  padding: 1px;
+  border-radius: 15ps;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.content-product > .os-scrollbar-vertical {
+  max-width: 7px;
+  padding: 1px;
+  border-radius: 15ps;
+  background: rgba(255, 0, 0, 0.3);
+}
+
+.scroll-off {
+  @apply overflow-hidden;
+}
+
+.itemProductHover .itemProductModel {
+  @apply hover:text-[var(--red-col-1)];
+}
+.itemProductHover .itemProductTitle {
+  @apply hover:text-[var(--white-col)];
+}
