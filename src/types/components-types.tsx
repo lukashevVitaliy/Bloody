@@ -9,7 +9,7 @@ export interface ITopBlock {
   title: string;
   classes: string;
   statusSearch?: boolean;
-  setSearchParams: () => void;
+  setSearchParams?: () => void;
   productQuery?: string | undefined;
 }
 
@@ -361,7 +361,7 @@ export interface IDownloadTemplate {
   info: string;
   link: string;
   label: string;
-  target: string | undefined;
+  target?: string | undefined;
 }
 
 export interface ITemplateShop {

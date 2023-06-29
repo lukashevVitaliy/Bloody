@@ -17,8 +17,8 @@ const Header: FC = () => {
   return (
     <header className={`? relative ${activeMenu ? 'scroll-off' : ''}`}>
       <ButtonMenuBurger onClick={handleClickMenuBurger} />
-      <div className="absolute -left-[209px] top-0 flex h-full w-[209px] flex-col lg:fixed lg:left-0 lg:top-0">
-        <Logo classes="group relative z-10 h-[148px] w-full bg-[var(--black-col-2)]" />
+      <div className="absolute -left-[13.0625rem] top-0 flex h-full w-[13.0625rem] flex-col lg:fixed lg:left-0 lg:top-0">
+        <Logo classes="group relative z-10 h-[9.25rem] w-full bg-[var(--black-col-2)]" />
         <HeaderMenuProducts />
         <HeaderMenu />
       </div>

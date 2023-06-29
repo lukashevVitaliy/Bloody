@@ -16,7 +16,7 @@ const Shop = () => {
     <div className="content-product h-screen" ref={contentWrapper}>
       <div
         className=" flex min-h-full w-full flex-wrap items-center justify-center gap-x-10 
-			px-4 xl:justify-between xl:gap-0 2xl:mx-auto 2xl:max-w-[1020px] 2xl:justify-between 2xl:px-0"
+			px-4 xl:justify-between xl:gap-0 2xl:mx-auto 2xl:max-w-[63.75rem] 2xl:justify-between 2xl:px-0"
       >
         <TemplateShop
           path={

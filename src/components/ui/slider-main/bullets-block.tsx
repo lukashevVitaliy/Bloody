@@ -12,7 +12,7 @@ export const BulletsBlock = ({
   const slides = getSlides();
 
   return (
-    <div className="absolute bottom-0 right-0 z-10 w-full bg-[#1a1a1d] px-4 pt-14 pb-4 text-center md:w-[500px] lg:w-[600px]">
+    <div className="absolute bottom-0 right-0 z-10 w-full bg-[#1a1a1d] px-4 pt-14 pb-4 text-center md:w-[31.25rem] lg:w-[37.5rem]">
       <div className="swiper-pagination"></div>
       <p className="mb-5 text-sm uppercase md:text-lg lg:text-2xl">
         {slides[activeSlide].title}

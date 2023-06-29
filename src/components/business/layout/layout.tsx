@@ -15,7 +15,7 @@ export const Layout = () => {
         autoClose={1500}
       />
       <Header />
-      <main className="ml-0 lg:ml-[209px]">
+      <main className="ml-0 lg:ml-[13.0625rem]">
         <Suspense fallback={<Spinner />}>
           <Outlet />
         </Suspense>

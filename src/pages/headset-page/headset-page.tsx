@@ -68,7 +68,7 @@ const HeadsetPage = () => {
   useScrollbar(contentWrapper);
 
   return (
-    <div className="grid grid-cols-[116px_1fr] sm:grid-cols-[156px_1fr]">
+    <div className="grid grid-cols-[7.25rem_1fr] sm:grid-cols-[9.75rem_1fr]">
       <div
         className="list-thumbnail h-screen overflow-y-auto"
         ref={listWrapper}

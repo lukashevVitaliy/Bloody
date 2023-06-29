@@ -279,7 +279,7 @@ export const FormSupport = () => {
         </label>
         <textarea
           placeholder="КОММЕНТАРИИ: (ПОЖАЛУЙСТА, ПОСТАРАЙТЕСЬ ОБЪЯСНИТЬ ЭТО КАК МОЖНО БОЛЕЕ ПОДРОБНО) *"
-          className="h-[160px] w-full resize-none border border-[var(--black-col-4)] bg-[var(--black-col-4)] p-4
+          className="h-[10rem] w-full resize-none border border-[var(--black-col-4)] bg-[var(--black-col-4)] p-4
 			text-sm font-bold uppercase outline-none transition-all delay-75 placeholder:text-sm
 			placeholder:font-normal placeholder:uppercase placeholder:text-[var(--gray-col-2)] hover:border hover:border-[var(--red-col-1)]
 			focus:bg-transparent"

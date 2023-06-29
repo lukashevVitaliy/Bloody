@@ -22,13 +22,13 @@ export const Navbar = memo(({ ...props }) => {
 
   return (
     <nav
-      className="fixed top-0 z-20 flex w-[calc(100%-120px)] items-center justify-between bg-gradient-to-b 
-			from-black to-transparent px-3 py-3 ring-0 sm:w-[calc(100%-160px)] sm:px-7 lg:w-[calc(100%-366px)]"
+      className="fixed top-0 z-20 flex w-[calc(100%-7.5rem)] items-center justify-between bg-gradient-to-b 
+			from-black to-transparent px-3 py-3 ring-0 sm:w-[calc(100%-10rem)] sm:px-7 lg:w-[calc(100%-22.875rem)]"
     >
       <span className="text-3xl text-[var(--red-col-1)] sm:text-5xl md:text-6xl">
         {background?.data.attributes.model}
       </span>
-      <ul className="flex flex-col justify-between xl:w-[584px] xl:flex-row">
+      <ul className="flex flex-col justify-between xl:w-[36.5rem] xl:flex-row">
         {links.map(({ id, title, ref }) => (
           <li key={id}>
             <button

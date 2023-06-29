@@ -47,14 +47,14 @@ const BluetoothsPage = () => {
       <TopBlock
         title="Bluetooth"
         statusSearch={true}
-        classes="flex md:flex-row h-[128px] md:h-[148px] w-full items-center flex-col justify-between px-4 border-b border-[var(--black-col-4)]"
+        classes="flex md:flex-row h-[8rem] md:h-[9.25rem] w-full items-center flex-col justify-between px-4 border-b border-[var(--black-col-4)]"
         setSearchParams={setSearchParams}
         productQuery={productQuery}
       />
       <div className="relative flex flex-col md:flex-row">
         <SidebarMenuLeft
           classes={
-            'min-w-[230px] border-r-4 border-[var(--black-col-4)] bg-[var(--black-col-3)]'
+            'min-w-[14.375rem] border-r-4 border-[var(--black-col-4)] bg-[var(--black-col-3)]'
           }
         >
           <AccordionMode

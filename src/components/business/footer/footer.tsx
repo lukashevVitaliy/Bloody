@@ -140,7 +140,7 @@ const Footer = () => {
                   <img
                     src={icon}
                     alt={title}
-                    className="h-[22px] w-[22px] rounded-full"
+                    className="h-[1.375rem] w-[1.375rem] rounded-full"
                   />
                   <span className="ml-1">{title}</span>
                 </Link>

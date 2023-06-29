@@ -26,11 +26,11 @@ const Support = () => {
     <div className="content-product h-screen" ref={contentWrapper}>
       <TopBlock
         title={support?.data.attributes.titlePage}
-        classes="flex h-[128px] md:h-[148px] w-full items-center justify-center lg:justify-start px-4 border-b border-[var(--black-col-4)]"
+        classes="flex h-[8rem] md:h-[9.25rem] w-full items-center justify-center lg:justify-start px-4 border-b border-[var(--black-col-4)]"
       />
 
-      <div className="mx-auto flex w-full flex-wrap justify-around 2xl:w-[1100px]">
-        <div className="order-2 w-full px-4 xl:order-1 xl:w-[800px] xl:px-0">
+      <div className="mx-auto flex w-full flex-wrap justify-around 2xl:w-[68.75rem]">
+        <div className="order-2 w-full px-4 xl:order-1 xl:w-[50rem] xl:px-0">
           <div
             className={
               activeMenu === 'Поддержка'
@@ -95,7 +95,7 @@ const Support = () => {
         </div>
 
         <div
-          className="order-1 ml-auto mr-0 w-[220px] pr-4 xl:order-2 xl:m-0 xl:pr-0"
+          className="order-1 ml-auto mr-0 w-[13.75rem] pr-4 xl:order-2 xl:m-0 xl:pr-0"
           role="tabpanel"
         >
           <h3 className="mb-3 border-b border-[var(--black-col-4)] pt-5 pb-3">

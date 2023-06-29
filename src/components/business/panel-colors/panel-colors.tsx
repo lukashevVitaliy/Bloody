@@ -30,8 +30,8 @@ export const PanelColors: FC<IPanelColorsItem> = memo(
                 }`}
                 className={
                   i === activeItem
-                    ? 'border-2 border-white/50 p-[2px]'
-                    : 'border-2 border-black p-[2px]'
+                    ? 'border-2 border-white/50 p-[0.125rem]'
+                    : 'border-2 border-black p-[0.125rem]'
                 }
               />
             </button>

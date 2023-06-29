@@ -15,7 +15,7 @@ export const SectionMain = forwardRef<HTMLDivElement, ISectionMain>(
         }}
         ref={ref}
       >
-        <div className="w-full pt-[136px] pl-3 text-2xl leading-normal leading-[52px] sm:w-[500px] sm:pl-7 md:text-4xl md:leading-snug">
+        <div className="w-full pt-[8.5rem] pl-3 text-2xl leading-normal leading-[3.25rem] sm:w-[31.25rem] sm:pl-7 md:text-4xl md:leading-snug">
           {children}
         </div>
       </div>

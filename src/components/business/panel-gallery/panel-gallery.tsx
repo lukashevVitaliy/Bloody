@@ -16,14 +16,14 @@ export const PanelGallery: FC<IPanelGallery> = memo(
           Галерея
         </span>
         <div
-          className="grid auto-rows-fr grid-cols-4 justify-items-center gap-[2px] bg-[var(--black-col-4)] p-4 md:grid-cols-2"
+          className="grid auto-rows-fr grid-cols-4 justify-items-center gap-[0.125rem] bg-[var(--black-col-4)] p-4 md:grid-cols-2"
           role="grid"
           aria-label="вид с разных сторон"
         >
           {colorsScheme[activeItem]?.images.data.map((image, index) => (
             <button
               key={index}
-              className="mr-1 flex h-16 w-16 sm:h-24 sm:w-24 md:h-[100px] md:w-[100px]"
+              className="mr-1 flex h-16 w-16 sm:h-24 sm:w-24 md:h-[6.25rem] md:w-[6.25rem]"
               onClick={() => setActiveItemGallery(index)}
               tabIndex={0}
             >
@@ -36,8 +36,8 @@ export const PanelGallery: FC<IPanelGallery> = memo(
                 }`}
                 className={
                   index === activeItemGallery
-                    ? 'border-2 border-white/50 p-[2px]'
-                    : 'border-2 border-black p-[2px]'
+                    ? 'border-2 border-white/50 p-[0.125rem]'
+                    : 'border-2 border-black p-[0.125rem]'
                 }
               />
             </button>

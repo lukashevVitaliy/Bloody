@@ -13,7 +13,7 @@ export const TemplateShop: FC<ITemplateShop> = ({
 }) => {
   return (
     <div
-      className="my-5 h-[380px] w-[320px] rounded-3xl bg-[var(--black-col-4)] shadow-md shadow-[var(--white-col)] transition-all 
+      className="my-5 h-[23.75rem] w-[20rem] rounded-3xl bg-[var(--black-col-4)] shadow-md shadow-[var(--white-col)] transition-all 
 			duration-150 hover:scale-95 hover:shadow-md hover:shadow-[var(--red-col-1)] md:my-0 "
     >
       <a

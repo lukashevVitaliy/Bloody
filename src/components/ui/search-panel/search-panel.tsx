@@ -24,7 +24,7 @@ export const SearchPanel: FC<ISearchPanel> = ({
 
   return (
     <form
-      className="mb-5 flex h-10 w-[240px] items-center border-r border-[#5a5a5a] bg-[var(--black-col-4)] md:mb-0  "
+      className="mb-5 flex h-10 w-[15rem] items-center border-r border-[#5a5a5a] bg-[var(--black-col-4)] md:mb-0  "
       onSubmit={handleSubmit}
       role="search"
     >
@@ -34,7 +34,8 @@ export const SearchPanel: FC<ISearchPanel> = ({
       <input
         type="search"
         name="search"
-        className="h-full w-[200px] border-r border-[#5a5a5a] bg-[var(--black-col-4)] px-4 text-xs outline-none placeholder:text-[var(--gray-col-1)] "
+        className="h-full w-[12.5rem] border-r border-[#5a5a5a] bg-[var(--black-col-4)] px-4 text-xs outline-none 
+				placeholder:text-[var(--gray-col-1)]"
         placeholder="Model #"
         value={search}
         onChange={(e) => setSearch(e.target.value)}

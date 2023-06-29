@@ -12,7 +12,10 @@ export const SectionGallery = forwardRef<HTMLDivElement, ISectionGallery>(
 
     return (
       <div ref={ref} className="w-full bg-inherit px-3 py-7 sm:p-7">
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_237px]" role="grid">
+        <div
+          className="grid grid-cols-1 md:grid-cols-[1fr_14.8125rem]"
+          role="grid"
+        >
           <PanelColorItem
             colors={colors}
             colorsScheme={colorsScheme}

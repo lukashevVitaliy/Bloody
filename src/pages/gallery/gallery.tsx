@@ -55,7 +55,7 @@ const Gallery = () => {
     <div className="content-product h-screen" ref={contentWrapper}>
       <TopBlock
         title={gallery.data.attributes.titleSection}
-        classes="flex h-[128px] md:h-[148px] w-full items-center justify-center lg:justify-start px-4 border-b border-[var(--black-col-4)]"
+        classes="flex h-[8rem] md:h-[9.25rem] w-full items-center justify-center lg:justify-start px-4 border-b border-[var(--black-col-4)]"
       />
       <div className="flex justify-end bg-[var(--black-col-4)] py-3 px-5">
         <NavbarGallery

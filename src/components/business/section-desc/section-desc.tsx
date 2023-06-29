@@ -12,7 +12,7 @@ export const SectionDesc: FC<ISectionDescProps> = memo(({ descPath }) => {
             className="border-b border-r border-[#333] p-5 text-center"
           >
             {logo?.data.attributes.url ? (
-              <div className="mx-auto mb-3 max-w-[350px]">
+              <div className="mx-auto mb-3 max-w-[21.875rem]">
                 <img
                   src={`${import.meta.env.VITE_STRAPI_URL}${
                     logo?.data.attributes.url
@@ -22,7 +22,7 @@ export const SectionDesc: FC<ISectionDescProps> = memo(({ descPath }) => {
                 />
               </div>
             ) : (
-              <div className="mx-auto mb-3 max-w-[350px]">
+              <div className="mx-auto mb-3 max-w-[21.875rem]">
                 <img
                   src={`${import.meta.env.VITE_STRAPI_URL}${
                     logo.data.attributes.url

@@ -19,8 +19,8 @@ export const Accordion: FC<IAccordion> = ({
       <Close
         className={
           accordion
-            ? 'absolute top-[12px] right-5 h-3 w-3 cursor-pointer stroke-white transition-all duration-150 md:top-[20px]'
-            : 'absolute top-[12px] right-5 h-3 w-3 rotate-45 cursor-pointer stroke-white transition-all duration-150 md:top-[20px]'
+            ? 'absolute top-[0.75rem] right-5 h-3 w-3 cursor-pointer stroke-white transition-all duration-150 md:top-[1.25rem]'
+            : 'absolute top-[0.75rem] right-5 h-3 w-3 rotate-45 cursor-pointer stroke-white transition-all duration-150 md:top-[1.25rem]'
         }
         onClick={onClick}
       />

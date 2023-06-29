@@ -31,10 +31,10 @@ const PressCenterNews = () => {
     >
       <TopBlock
         title={pressCenter.data.attributes.titlePages}
-        classes="flex h-[148px] w-full items-center justify-between px-4 border-b border-[var(--black-col-4)]"
+        classes="flex h-[9.25rem] w-full items-center justify-between px-4 border-b border-[var(--black-col-4)]"
       />
-      <div className="mx-auto flex w-[1100px] justify-between">
-        <div className="mb-5 w-[800px] border-b border-[var(--black-col-4)] pb-3">
+      <div className="mx-auto flex w-[68.75rem] justify-between">
+        <div className="mb-5 w-[50rem] border-b border-[var(--black-col-4)] pb-3">
           <h3 className="mb-3 border-b border-[var(--black-col-4)] pt-5 pb-3">
             {content.titleSection}
           </h3>
@@ -67,7 +67,7 @@ const PressCenterNews = () => {
           </div>
         </div>
 
-        <div className="w-[220px] pt-5 pb-3">
+        <div className="w-[13.75rem] pt-5 pb-3">
           <time className=" text-center text-sm text-[var(--gray-col-2)]">
             Дата новости: {content.dateNews}
           </time>

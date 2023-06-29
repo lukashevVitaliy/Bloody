@@ -7,7 +7,7 @@ export const ItemProduct: FC<ItemProductProps> = memo(
     return (
       <Link to={path} className={`group ${classes}`} {...attrs}>
         <img src={urlImageItem} alt={modelItem} className="object-cover" />
-        <h2 className="mt-[10px] mb-[5px]">{modelItem}</h2>
+        <h2 className="mt-[0.625rem] mb-[0.3125rem]">{modelItem}</h2>
         <p className="text-base uppercase text-[var(--gray-col-1)] transition-all duration-300 group-hover:text-[var(--white-col)]">
           {titleItem}
         </p>

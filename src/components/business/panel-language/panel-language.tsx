@@ -2,7 +2,7 @@ import { React, Link } from 'services/imports-npm';
 
 const PanelLanguage = () => {
   return (
-    <div className="group relative z-10 flex h-[30px] items-center border-y border-[var(--black-col-4)] bg-[var(--black-col-2)]">
+    <div className="group relative z-10 flex h-[1.875rem] items-center border-y border-[var(--black-col-4)] bg-[var(--black-col-2)]">
       <Link
         to="#lang"
         className="relative z-10 w-full duration-300 ease-in-out group-hover:fill-[var(--red-col-2)]"

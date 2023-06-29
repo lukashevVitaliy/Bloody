@@ -22,7 +22,7 @@ export const NavbarGallery: FC<INavbarGallery> = ({
   };
 
   return (
-    <ul className="flex w-[320px] justify-between ">
+    <ul className="flex w-[20rem] justify-between ">
       {links.map(({ id, title }) => (
         <li
           key={id}

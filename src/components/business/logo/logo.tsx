@@ -10,7 +10,7 @@ interface ILogo {
 const Logo: FC<ILogo> = ({ classes }) => {
   return (
     <div className={classes} role="logo">
-      <Link to="/" className="group flex h-[148px] w-full justify-center">
+      <Link to="/" className="group flex h-[9.25rem] w-full justify-center">
         <LogoSVG
           className="transition-width relative z-10 h-full w-full fill-[var(--red-col-2)] py-3 duration-300 ease-in-out group-hover:fill-white"
           aria-label="Иконка Bloody"

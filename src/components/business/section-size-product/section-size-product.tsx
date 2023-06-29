@@ -8,7 +8,7 @@ export const SectionSizeProduct: FC<ISectionSizeProduct> = memo(({ size }) => {
       <p className="mb-5 text-xl uppercase text-[var(--gray-col-2)] md:text-4xl">
         РАЗМЕР ПРОДУКТА
       </p>
-      <div className="mb-5 max-w-[914px]">
+      <div className="mb-5 max-w-[57.125rem]">
         {(size?.data.attributes.image1.data[0] ||
           size?.data.attributes.image1.data) && (
           <img
@@ -32,7 +32,7 @@ export const SectionSizeProduct: FC<ISectionSizeProduct> = memo(({ size }) => {
           />
         )}
       </div>
-      <p className="text-[10px] font-light text-[var(--gray-col-2)] md:text-xs">
+      <p className="text-[0.625rem] font-light text-[var(--gray-col-2)] md:text-xs">
         {size?.data.attributes.text}
       </p>
     </div>

@@ -12,7 +12,7 @@ const HeaderMenuProducts = () => {
       id: 1,
       icon: (
         <Mouse
-          className="h-[44px] w-[44px] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]"
+          className="h-[2.75rem] w-[2.75rem] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]"
           aria-label="иконка мышки"
         />
       ),
@@ -23,7 +23,7 @@ const HeaderMenuProducts = () => {
       id: 2,
       icon: (
         <Keyboard
-          className={`h-[44px] w-[44px] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
+          className={`h-[2.75rem] w-[2.75rem] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
           aria-label="иконка клавиатуры"
         />
       ),
@@ -34,7 +34,7 @@ const HeaderMenuProducts = () => {
       id: 3,
       icon: (
         <Headset
-          className={`h-[44px] w-[44px] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
+          className={`h-[2.75rem] w-[2.75rem] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
           aria-label="иконка гарнитуры"
         />
       ),
@@ -45,7 +45,7 @@ const HeaderMenuProducts = () => {
       id: 4,
       icon: (
         <Bluetooth
-          className={`h-[44px] w-[44px] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
+          className={`h-[2.75rem] w-[2.75rem] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
           aria-label="иконка блютуз"
         />
       ),
@@ -56,7 +56,7 @@ const HeaderMenuProducts = () => {
       id: 5,
       icon: (
         <Accessories
-          className={`h-[44px] w-[44px] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
+          className={`h-[2.75rem] w-[2.75rem] fill-[var(--gray-col-1)] transition-all duration-300 group-hover:fill-[var(--white-col)]`}
           aria-label="иконка аксессуары"
         />
       ),

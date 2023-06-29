@@ -32,7 +32,7 @@ export const MenuBurger: FC<IMenuBurger> = ({ activeMenu, onClick }) => {
             onClick={onClick}
           />
           <div className="mt-10 h-full">
-            <Logo classes="group relative z-10 h-[148px] w-full bg-[var(--black-col-2)]" />
+            <Logo classes="group relative z-10 h-[9.25rem] w-full bg-[var(--black-col-2)]" />
             <HeaderMenuProducts />
             <HeaderMenu />
           </div>

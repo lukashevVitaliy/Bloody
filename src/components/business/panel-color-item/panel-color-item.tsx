@@ -5,7 +5,10 @@ import { IPanelColorItemProps } from 'types/components-types';
 export const PanelColorItem: FC<IPanelColorItemProps> = memo(
   ({ colors, colorsScheme, activeItem, activeItemGallery }) => {
     return (
-      <div className="mx-auto max-w-[700px]" aria-label="большое изображение">
+      <div
+        className="mx-auto max-w-[43.75rem]"
+        aria-label="большое изображение"
+      >
         {colorsScheme[activeItem]?.images.data && (
           <img
             src={`${import.meta.env.VITE_STRAPI_URL}

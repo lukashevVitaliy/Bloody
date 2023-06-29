@@ -11,7 +11,7 @@ const ButtonMainSlider: FC<IButtonMainSlider> = ({
   return (
     <Link
       to={href}
-      className="z-10 block w-[100px] cursor-pointer rounded-md  bg-[var(--red-col-1)] sm:w-[130px]"
+      className="z-10 block w-[6.25rem] cursor-pointer rounded-md  bg-[var(--red-col-1)] sm:w-[8.125rem]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
