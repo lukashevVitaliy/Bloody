@@ -11,7 +11,7 @@ interface IAccordionNumberKeyGhost {
   setSelectKeyGhost: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionKeyGhost: FC<IAccordionNumberKeyGhost> = memo(
+const AccordionKeyGhost: FC<IAccordionNumberKeyGhost> = memo(
   ({ uniqueKeyGhost, accordionKeyGhost, onClick, setSelectKeyGhost }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionKeyGhost: FC<IAccordionNumberKeyGhost> = memo(
     );
   }
 );
+
+export default AccordionKeyGhost;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React, memo } from 'services/imports-npm';
 import { ISectionDescProps } from 'types/components-types';
 
-export const SectionDesc: FC<ISectionDescProps> = memo(({ descPath }) => {
+const SectionDesc: FC<ISectionDescProps> = memo(({ descPath }) => {
   return (
     <ul className="mb-5 grid w-full bg-inherit md:grid-cols-2 xl:grid-cols-3">
       {descPath?.length > 0 &&
@@ -43,3 +43,5 @@ export const SectionDesc: FC<ISectionDescProps> = memo(({ descPath }) => {
     </ul>
   );
 });
+
+export default SectionDesc;

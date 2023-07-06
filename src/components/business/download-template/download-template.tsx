@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React } from 'services/imports-npm';
 import { IDownloadTemplate } from 'types/components-types';
 
-export const DownloadTemplate: FC<IDownloadTemplate> = ({
+const DownloadTemplate: FC<IDownloadTemplate> = ({
   name,
   version,
   update,
@@ -45,3 +45,5 @@ export const DownloadTemplate: FC<IDownloadTemplate> = ({
     </div>
   );
 };
+
+export default DownloadTemplate;

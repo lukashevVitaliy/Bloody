@@ -1,1 +1,3 @@
-export * from './section-desc-short';
+import SectionDescShort from './section-desc-short';
+
+export { SectionDescShort };

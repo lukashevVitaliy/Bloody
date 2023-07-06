@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React } from 'services/imports-npm';
 import { IListProductsProps } from 'types/components-types';
 
-export const ListProducts: FC<IListProductsProps> = ({
+const ListProducts: FC<IListProductsProps> = ({
   children,
   classes,
   tag: Tag,
@@ -13,6 +13,8 @@ export const ListProducts: FC<IListProductsProps> = ({
     </Tag>
   );
 };
+
+export default ListProducts;
 
 ListProducts.defaultProps = {
   children: null,

@@ -1,1 +1,3 @@
-export * from './sidebar-menu-left';
+import SidebarMenuLeft from './sidebar-menu-left';
+
+export { SidebarMenuLeft };

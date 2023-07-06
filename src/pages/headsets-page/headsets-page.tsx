@@ -5,23 +5,51 @@ import {
   useRef,
   useSearchParams,
   defer,
+  lazy,
 } from 'services/imports-npm';
+
+// ===== static imports /start/ =====
 import {
   getHeadsetsBacklighting,
   getHeadsetsConnecting,
   getHeadsetsHeadband,
   getHeadsetsSpeakers,
 } from 'components/ui/accordion/unique-data';
-import { ListProducts } from 'components/business/list-products';
-import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-import { TopBlock } from 'components/business/top-block';
 import { useScrollbar } from 'hooks/useScrollbar';
-import { AccordionSpeakers } from 'components/ui/accordion-speakers';
-import { AccordionConnecting } from 'components/ui/accordion-connecting';
-import { AccordionHeadband } from 'components/ui/accordion-headband';
-import { AccordionIllumination } from 'components/ui/accordion-illumination';
 import { RenderItemList } from 'components/business/render-item-list';
-import Footer from 'components/business/footer/footer';
+// import { ListProducts } from 'components/business/list-products';
+// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+// import { TopBlock } from 'components/business/top-block';
+// import { AccordionSpeakers } from 'components/ui/accordion-speakers';
+// import { AccordionConnecting } from 'components/ui/accordion-connecting';
+// import { AccordionHeadband } from 'components/ui/accordion-headband';
+// import { AccordionIllumination } from 'components/ui/accordion-illumination';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const ListProducts = lazy(
+  () => import('components/business/list-products/list-products')
+);
+const SidebarMenuLeft = lazy(
+  () => import('components/business/sidebar-menu-left/sidebar-menu-left')
+);
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const AccordionSpeakers = lazy(
+  () => import('components/ui/accordion-speakers/accordion-speakers')
+);
+const AccordionConnecting = lazy(
+  () => import('components/ui/accordion-connecting/accordion-connecting')
+);
+const AccordionHeadband = lazy(
+  () => import('components/ui/accordion-headband/accordion-headband')
+);
+const AccordionIllumination = lazy(
+  () => import('components/ui/accordion-illumination/accordion-illumination')
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IHeadsets } from 'types/components-types';
 
 const HeadsetsPage = () => {

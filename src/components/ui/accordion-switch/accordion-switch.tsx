@@ -11,7 +11,7 @@ interface IAccordionSwitch {
   setSelectSwitch: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionSwitch: FC<IAccordionSwitch> = memo(
+const AccordionSwitch: FC<IAccordionSwitch> = memo(
   ({ uniqueSwitch, accordionSwitch, onClick, setSelectSwitch }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionSwitch: FC<IAccordionSwitch> = memo(
     );
   }
 );
+
+export default AccordionSwitch;

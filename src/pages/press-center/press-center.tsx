@@ -4,11 +4,27 @@ import {
   useRef,
   useLoaderData,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import { TemplatePressCenterTotalSection } from 'components/business/template-press-center-total-section/template-press-center-total-section';
+
+// ===== static imports /start/ =====
 import { useScrollbar } from 'hooks/useScrollbar';
-import Footer from 'components/business/footer/footer';
+// import { TopBlock } from 'components/business/top-block';
+// import { TemplatePressCenterTotalSection } from 'components/business/template-press-center-total-section/template-press-center-total-section';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const TemplatePressCenterTotalSection = lazy(
+  () =>
+    import(
+      'components/business/template-press-center-total-section/template-press-center-total-section'
+    )
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IPressCenterPage } from 'types/components-types';
 
 const PressCenter = () => {

@@ -1,1 +1,3 @@
-export * from './accordion-illumination';
+import AccordionIllumination from './accordion-illumination';
+
+export { AccordionIllumination };

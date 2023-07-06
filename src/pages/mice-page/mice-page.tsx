@@ -5,21 +5,46 @@ import {
   useRef,
   useSearchParams,
   defer,
+  lazy,
 } from 'services/imports-npm';
+
+// ===== static imports /start/ =====
 import {
   UniqueCpi,
   UniqueSeries,
   UniqueSize,
 } from 'components/ui/accordion/unique-data';
-import { ListProducts } from 'components/business/list-products';
-import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-import { TopBlock } from 'components/business/top-block';
 import { useScrollbar } from 'hooks/useScrollbar';
-import { AccordionCPI } from 'components/ui/accordion-cpi';
-import { AccordionSize } from 'components/ui/accordion-size';
-import { AccordionSeries } from 'components/ui/accordion-series';
 import { RenderItemList } from 'components/business/render-item-list';
-import Footer from 'components/business/footer/footer';
+// import { ListProducts } from 'components/business/list-products';
+// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+// import { TopBlock } from 'components/business/top-block';
+// import { AccordionCPI } from 'components/ui/accordion-cpi';
+// import { AccordionSize } from 'components/ui/accordion-size';
+// import { AccordionSeries } from 'components/ui/accordion-series';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const ListProducts = lazy(
+  () => import('components/business/list-products/list-products')
+);
+const SidebarMenuLeft = lazy(
+  () => import('components/business/sidebar-menu-left/sidebar-menu-left')
+);
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const AccordionCPI = lazy(
+  () => import('components/ui/accordion-cpi/accordion-cpi')
+);
+const AccordionSize = lazy(
+  () => import('components/ui/accordion-size/accordion-size')
+);
+const AccordionSeries = lazy(
+  () => import('components/ui/accordion-series/accordion-series')
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IMice } from 'types/components-types';
 
 const MicePage = () => {

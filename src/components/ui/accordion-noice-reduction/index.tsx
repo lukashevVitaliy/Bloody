@@ -1,1 +1,3 @@
-export * from './accordion-noice-reduction';
+import AccordionNoiceReduction from './accordion-noice-reduction';
+
+export { AccordionNoiceReduction };

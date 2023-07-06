@@ -1,1 +1,3 @@
-export * from './accordion-category-accessories';
+import AccordionСategoryAccessories from './accordion-category-accessories';
+
+export { AccordionСategoryAccessories };

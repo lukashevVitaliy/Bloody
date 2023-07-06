@@ -1,7 +1,7 @@
 import { React, useLoaderData } from 'services/imports-npm';
 import { IInfoMice } from 'types/components-types';
 
-export const MiceSpecification = () => {
+const MiceSpecification = () => {
   const { info } = useLoaderData() as { info: IInfoMice };
 
   return (
@@ -34,3 +34,5 @@ export const MiceSpecification = () => {
     </>
   );
 };
+
+export default MiceSpecification;

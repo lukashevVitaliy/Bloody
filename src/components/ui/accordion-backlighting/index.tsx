@@ -1,1 +1,3 @@
-export * from './accordion-backlighting';
+import AccordionBacklighting from './accordion-backlighting';
+
+export { AccordionBacklighting };

@@ -9,9 +9,11 @@ import Pagination from 'components/ui/pagination/pagination';
 
 import { TemplateInfoPressCenter } from '../template-info-press-center';
 
-export const TemplatePressCenterTotalSection: FC<
-  ITemplatePressCenterTotalSection
-> = ({ title, active, content }) => {
+const TemplatePressCenterTotalSection: FC<ITemplatePressCenterTotalSection> = ({
+  title,
+  active,
+  content,
+}) => {
   // pagination
   const {
     totalPages,
@@ -74,3 +76,5 @@ export const TemplatePressCenterTotalSection: FC<
     </div>
   );
 };
+
+export default TemplatePressCenterTotalSection;

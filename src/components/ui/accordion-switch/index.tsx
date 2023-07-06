@@ -1,1 +1,3 @@
-export * from './accordion-switch';
+import AccordionSwitch from './accordion-switch';
+
+export { AccordionSwitch };

@@ -1,1 +1,3 @@
-export * from './form-support';
+import FormSupport from './form-support';
+
+export { FormSupport };

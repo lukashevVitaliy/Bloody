@@ -11,7 +11,7 @@ interface IInputs {
   comment: string;
 }
 
-export const FormSupport = () => {
+const FormSupport = () => {
   const {
     register,
     getValues,
@@ -306,3 +306,5 @@ export const FormSupport = () => {
     </form>
   );
 };
+
+export default FormSupport;

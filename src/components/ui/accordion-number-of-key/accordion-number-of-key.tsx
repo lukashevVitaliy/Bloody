@@ -11,7 +11,7 @@ interface IAccordionNumberOfKey {
   setSelectNumberOfKeys: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionNumberOfKey: FC<IAccordionNumberOfKey> = memo(
+const AccordionNumberOfKey: FC<IAccordionNumberOfKey> = memo(
   ({
     uniqueNumberOfKeys,
     accordionNumberOfKeys,
@@ -41,3 +41,5 @@ export const AccordionNumberOfKey: FC<IAccordionNumberOfKey> = memo(
     );
   }
 );
+
+export default AccordionNumberOfKey;

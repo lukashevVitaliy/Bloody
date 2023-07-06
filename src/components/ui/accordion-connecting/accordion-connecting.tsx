@@ -11,7 +11,7 @@ interface IAccordionConnecting {
   setSelectConnecting: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionConnecting: FC<IAccordionConnecting> = memo(
+const AccordionConnecting: FC<IAccordionConnecting> = memo(
   ({ uniqueConnecting, accordionConnecting, onClick, setSelectConnecting }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionConnecting: FC<IAccordionConnecting> = memo(
     );
   }
 );
+
+export default AccordionConnecting;

@@ -1,7 +1,7 @@
 import { React, useLoaderData } from 'services/imports-npm';
 import { IInfoBluethooths } from 'types/components-types';
 
-export const BluethoothsSpecification = () => {
+const BluethoothsSpecification = () => {
   const { info } = useLoaderData() as { info: IInfoBluethooths };
 
   return (
@@ -29,3 +29,5 @@ export const BluethoothsSpecification = () => {
     </>
   );
 };
+
+export default BluethoothsSpecification;

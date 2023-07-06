@@ -1,7 +1,7 @@
 import { React, useLoaderData } from 'services/imports-npm';
 import { IInfoHeadsets } from 'types/components-types';
 
-export const HeadsetsSpecification = () => {
+const HeadsetsSpecification = () => {
   const { info } = useLoaderData() as { info: IInfoHeadsets };
 
   return (
@@ -40,3 +40,5 @@ export const HeadsetsSpecification = () => {
     </>
   );
 };
+
+export default HeadsetsSpecification;

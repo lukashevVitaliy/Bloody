@@ -7,7 +7,7 @@ import {
 
 import errorIcon from '../../assets/icons/logo-2.png';
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   const error = useRouteError();
 
   if (isRouteErrorResponse(error)) {
@@ -37,3 +37,5 @@ export const ErrorPage = () => {
 
   throw error;
 };
+
+export default ErrorPage;

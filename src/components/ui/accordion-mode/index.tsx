@@ -1,1 +1,3 @@
-export * from './accordion-mode';
+import AccordionMode from './accordion-mode';
+
+export { AccordionMode };

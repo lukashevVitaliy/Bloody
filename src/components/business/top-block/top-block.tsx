@@ -4,7 +4,7 @@ import { React, memo } from 'services/imports-npm';
 import { SearchPanel } from 'components/ui/search-panel/search-panel';
 import { ITopBlock } from 'types/components-types';
 
-export const TopBlock: FC<ITopBlock> = memo(
+const TopBlock: FC<ITopBlock> = memo(
   ({ title, classes, statusSearch, setSearchParams, productQuery }) => {
     return (
       <div className={classes}>
@@ -19,3 +19,5 @@ export const TopBlock: FC<ITopBlock> = memo(
     );
   }
 );
+
+export default TopBlock;

@@ -1,1 +1,3 @@
-export * from './section-size-product';
+import SectionSizeProduct from './section-size-product';
+
+export { SectionSizeProduct };

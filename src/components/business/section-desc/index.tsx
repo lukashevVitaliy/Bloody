@@ -1,1 +1,3 @@
-export * from './section-desc';
+import SectionDesc from './section-desc';
+
+export { SectionDesc };

@@ -1,1 +1,3 @@
-export * from './top-block';
+import TopBlock from './top-block';
+
+export { TopBlock };

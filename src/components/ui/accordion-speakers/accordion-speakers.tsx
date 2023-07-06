@@ -11,7 +11,7 @@ interface IAccordionSpeakers {
   setSelectSpeakers: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionSpeakers: FC<IAccordionSpeakers> = memo(
+const AccordionSpeakers: FC<IAccordionSpeakers> = memo(
   ({ uniqueSpeakers, accordionSpeakers, onClick, setSelectSpeakers }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionSpeakers: FC<IAccordionSpeakers> = memo(
     );
   }
 );
+
+export default AccordionSpeakers;

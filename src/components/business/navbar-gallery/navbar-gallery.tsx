@@ -13,7 +13,7 @@ interface INavbarGallery {
   activeNavMenu: string;
 }
 
-export const NavbarGallery: FC<INavbarGallery> = ({
+const NavbarGallery: FC<INavbarGallery> = ({
   activeNavMenu,
   setActiveNavMenu,
 }) => {
@@ -39,3 +39,5 @@ export const NavbarGallery: FC<INavbarGallery> = ({
     </ul>
   );
 };
+
+export default NavbarGallery;

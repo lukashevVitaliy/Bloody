@@ -4,10 +4,20 @@ import {
   useRef,
   useLoaderData,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
+
+// ===== static imports /start/ =====
 import { useScrollbar } from 'hooks/useScrollbar';
-import Footer from 'components/business/footer/footer';
+// import { TopBlock } from 'components/business/top-block';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IAbout } from 'types/components-types';
 
 const About = () => {

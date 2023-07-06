@@ -4,15 +4,25 @@ import {
   defer,
   useLoaderData,
   ReactMarkdown,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import Footer from 'components/business/footer/footer';
+
+// ===== static imports /start/ =====
 import {
   getPressCenter,
   getPressCenterNews,
 } from 'services/request-press-center-news';
-import { IPressCenterNewsLoaderProps } from 'types/input-types';
 import { useScrollbar } from 'hooks/useScrollbar';
+// import { TopBlock } from 'components/business/top-block';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
+import { IPressCenterNewsLoaderProps } from 'types/input-types';
 import { IPressCenterNews } from 'types/components-types';
 
 const PressCenterNews = () => {

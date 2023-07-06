@@ -1,1 +1,3 @@
-export * from './form-of-cooperation';
+import FormOfCooperation from './form-of-cooperation';
+
+export { FormOfCooperation };

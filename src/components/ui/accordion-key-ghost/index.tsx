@@ -1,1 +1,3 @@
-export * from './accordion-key-ghost';
+import AccordionKeyGhost from './accordion-key-ghost';
+
+export { AccordionKeyGhost };

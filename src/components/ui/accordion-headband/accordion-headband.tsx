@@ -11,7 +11,7 @@ interface IAccordionHeadband {
   setSelectHeadband: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionHeadband: FC<IAccordionHeadband> = memo(
+const AccordionHeadband: FC<IAccordionHeadband> = memo(
   ({ uniqueHeadband, accordionHeadband, onClick, setSelectHeadband }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionHeadband: FC<IAccordionHeadband> = memo(
     );
   }
 );
+
+export default AccordionHeadband;

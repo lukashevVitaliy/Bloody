@@ -2,7 +2,7 @@ import { React } from 'services/imports-npm';
 
 import errorIcon from '../../assets/icons/logo-2.png';
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   return (
     <div className="flex h-screen w-full flex-col items-center justify-center">
       <div className="max-w-xl px-4 text-center">
@@ -22,3 +22,5 @@ export const NotFoundPage = () => {
     </div>
   );
 };
+
+export default NotFoundPage;

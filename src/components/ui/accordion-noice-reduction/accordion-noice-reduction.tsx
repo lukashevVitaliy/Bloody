@@ -11,7 +11,7 @@ interface IAccordionNoiceReduction {
   setSelectNoiceReduction: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionNoiceReduction: FC<IAccordionNoiceReduction> = memo(
+const AccordionNoiceReduction: FC<IAccordionNoiceReduction> = memo(
   ({
     uniqueNoiceReduction,
     accordionNoiceReduction,
@@ -41,3 +41,5 @@ export const AccordionNoiceReduction: FC<IAccordionNoiceReduction> = memo(
     );
   }
 );
+
+export default AccordionNoiceReduction;

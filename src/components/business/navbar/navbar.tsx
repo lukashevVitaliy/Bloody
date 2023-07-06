@@ -1,7 +1,7 @@
 import { React, memo, useLoaderData, useState } from 'services/imports-npm';
 import { IItemBackground } from 'types/components-types';
 
-export const Navbar = memo(({ ...props }) => {
+const Navbar = memo(({ ...props }) => {
   const [activeLink, setActiveLink] = useState<null>(null);
 
   const { background } = useLoaderData() as { background: IItemBackground };
@@ -47,3 +47,5 @@ export const Navbar = memo(({ ...props }) => {
     </nav>
   );
 });
+
+export default Navbar;

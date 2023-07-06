@@ -1,1 +1,3 @@
-export * from './accordion-headband';
+import AccordionHeadband from './accordion-headband';
+
+export { AccordionHeadband };

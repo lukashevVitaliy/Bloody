@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React, memo } from 'services/imports-npm';
 import { ISectionSizeProduct } from 'types/components-types';
 
-export const SectionSizeProduct: FC<ISectionSizeProduct> = memo(({ size }) => {
+const SectionSizeProduct: FC<ISectionSizeProduct> = memo(({ size }) => {
   return (
     <div className="w-full bg-inherit px-3 py-7 md:p-7">
       <p className="mb-5 text-xl uppercase text-[var(--gray-col-2)] md:text-4xl">
@@ -38,3 +38,5 @@ export const SectionSizeProduct: FC<ISectionSizeProduct> = memo(({ size }) => {
     </div>
   );
 });
+
+export default SectionSizeProduct;

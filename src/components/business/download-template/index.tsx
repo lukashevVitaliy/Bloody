@@ -1,1 +1,3 @@
-export * from './download-template';
+import DownloadTemplate from './download-template';
+
+export { DownloadTemplate };

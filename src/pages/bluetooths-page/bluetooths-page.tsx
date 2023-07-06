@@ -5,20 +5,43 @@ import {
   useRef,
   useSearchParams,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-import { ListProducts } from 'components/business/list-products';
+
+// ===== static imports /start/ =====
 import {
   getBluetoothMode,
   getBluetoothNoiceReduction,
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
-import { AccordionMode } from 'components/ui/accordion-mode';
-import { AccordionNoiceReduction } from 'components/ui/accordion-noice-reduction';
 import { RenderItemList } from 'components/business/render-item-list';
+// import { TopBlock } from 'components/business/top-block';
+// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+// import { ListProducts } from 'components/business/list-products';
+// import { AccordionMode } from 'components/ui/accordion-mode';
+// import { AccordionNoiceReduction } from 'components/ui/accordion-noice-reduction';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const SidebarMenuLeft = lazy(
+  () => import('components/business/sidebar-menu-left/sidebar-menu-left')
+);
+const ListProducts = lazy(
+  () => import('components/business/list-products/list-products')
+);
+const AccordionMode = lazy(
+  () => import('components/ui/accordion-mode/accordion-mode')
+);
+const AccordionNoiceReduction = lazy(
+  () =>
+    import('components/ui/accordion-noice-reduction/accordion-noice-reduction')
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IBluetooths } from 'types/components-types';
-import Footer from 'components/business/footer/footer';
 
 const BluetoothsPage = () => {
   const [accordionMode, setActiveAccordionMode] = useState<boolean>(false);

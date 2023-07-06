@@ -1,7 +1,7 @@
 import { React, useLoaderData } from 'services/imports-npm';
 import { IInfoAccessories } from 'types/components-types';
 
-export const AccessoriesSpecification = () => {
+const AccessoriesSpecification = () => {
   const { info } = useLoaderData() as { info: IInfoAccessories };
 
   return (
@@ -19,3 +19,5 @@ export const AccessoriesSpecification = () => {
     </>
   );
 };
+
+export default AccessoriesSpecification;

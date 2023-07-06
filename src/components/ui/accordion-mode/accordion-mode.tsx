@@ -11,7 +11,7 @@ interface IAccordionMode {
   setSelectMode: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionMode: FC<IAccordionMode> = memo(
+const AccordionMode: FC<IAccordionMode> = memo(
   ({ uniqueMode, accordionMode, onClick, setSelectMode }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionMode: FC<IAccordionMode> = memo(
     );
   }
 );
+
+export default AccordionMode;

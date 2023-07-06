@@ -1,1 +1,3 @@
-export * from './template-press-center-total-section';
+import TemplatePressCenterTotalSection from './template-press-center-total-section';
+
+export { TemplatePressCenterTotalSection };

@@ -12,7 +12,7 @@ interface IInputs {
   comment: string;
 }
 
-export const FormOfCooperation = () => {
+const FormOfCooperation = () => {
   const {
     register,
     getValues,
@@ -335,3 +335,5 @@ export const FormOfCooperation = () => {
     </form>
   );
 };
+
+export default FormOfCooperation;

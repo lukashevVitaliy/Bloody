@@ -5,7 +5,7 @@ import { PanelColors } from '../panel-colors';
 import { PanelGallery } from '../panel-gallery';
 import { PanelColorItem } from '../panel-color-item/panel-color-item';
 
-export const SectionGallery = forwardRef<HTMLDivElement, ISectionGallery>(
+const SectionGallery = forwardRef<HTMLDivElement, ISectionGallery>(
   ({ colors, colorsScheme }, ref) => {
     const [activeItem, setActiveItem] = useState<number>(0);
     const [activeItemGallery, setActiveItemGallery] = useState<number>(0);
@@ -43,3 +43,5 @@ export const SectionGallery = forwardRef<HTMLDivElement, ISectionGallery>(
     );
   }
 );
+
+export default SectionGallery;

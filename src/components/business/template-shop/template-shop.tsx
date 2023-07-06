@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React } from 'services/imports-npm';
 import { ITemplateShop } from 'types/components-types';
 
-export const TemplateShop: FC<ITemplateShop> = ({
+const TemplateShop: FC<ITemplateShop> = ({
   path,
   imagePath,
   imageAlt,
@@ -46,3 +46,5 @@ export const TemplateShop: FC<ITemplateShop> = ({
     </div>
   );
 };
+
+export default TemplateShop;

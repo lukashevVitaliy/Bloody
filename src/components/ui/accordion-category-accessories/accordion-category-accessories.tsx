@@ -11,8 +11,8 @@ interface IAccordionСategoryAccessories {
   setSelectCategory: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionСategoryAccessories: FC<IAccordionСategoryAccessories> =
-  memo(({ uniqueCategory, accordionCategory, onClick, setSelectCategory }) => {
+const AccordionСategoryAccessories: FC<IAccordionСategoryAccessories> = memo(
+  ({ uniqueCategory, accordionCategory, onClick, setSelectCategory }) => {
     return (
       <>
         <Accordion
@@ -34,4 +34,7 @@ export const AccordionСategoryAccessories: FC<IAccordionСategoryAccessories> =
         </Accordion>
       </>
     );
-  });
+  }
+);
+
+export default AccordionСategoryAccessories;

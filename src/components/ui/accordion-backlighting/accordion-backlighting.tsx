@@ -11,7 +11,7 @@ interface IAccordionBacklighting {
   setSelectBacklighting: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionBacklighting: FC<IAccordionBacklighting> = memo(
+const AccordionBacklighting: FC<IAccordionBacklighting> = memo(
   ({
     uniqueBacklighting,
     accordionBacklighting,
@@ -41,3 +41,5 @@ export const AccordionBacklighting: FC<IAccordionBacklighting> = memo(
     );
   }
 );
+
+export default AccordionBacklighting;

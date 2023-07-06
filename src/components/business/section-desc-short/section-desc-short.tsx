@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React, memo } from 'services/imports-npm';
 import { ISectionDescShortProps } from 'types/components-types';
 
-export const SectionDescShort: FC<ISectionDescShortProps> = memo(
+const SectionDescShort: FC<ISectionDescShortProps> = memo(
   ({ shortDescPath }) => {
     return (
       <ul className="mt-5 grid grid-cols-2 border-b border-[#333] bg-inherit lg:grid-cols-3 xl:auto-cols-fr xl:grid-flow-col ">
@@ -30,3 +30,5 @@ export const SectionDescShort: FC<ISectionDescShortProps> = memo(
     );
   }
 );
+
+export default SectionDescShort;

@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React } from 'services/imports-npm';
 import { IListProductsThumbnail } from 'types/components-types';
 
-export const ListProductsThumbnail: FC<IListProductsThumbnail> = ({
+const ListProductsThumbnail: FC<IListProductsThumbnail> = ({
   children,
   classes,
   ...attrs
@@ -13,6 +13,8 @@ export const ListProductsThumbnail: FC<IListProductsThumbnail> = ({
     </ul>
   );
 };
+
+export default ListProductsThumbnail;
 
 ListProductsThumbnail.defaultProps = {
   children: null,

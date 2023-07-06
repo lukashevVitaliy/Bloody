@@ -1,7 +1,7 @@
 import { React, useLoaderData } from 'services/imports-npm';
 import { IInfoKeyboards } from 'types/components-types';
 
-export const KeyboardsSpecification = () => {
+const KeyboardsSpecification = () => {
   const { info } = useLoaderData() as { info: IInfoKeyboards };
 
   return (
@@ -33,3 +33,5 @@ export const KeyboardsSpecification = () => {
     </>
   );
 };
+
+export default KeyboardsSpecification;

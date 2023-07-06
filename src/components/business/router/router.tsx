@@ -1,37 +1,13 @@
-import { React, lazy } from 'services/imports-npm';
+import { React, lazy, Suspense, ErrorBoundary } from 'services/imports-npm';
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
 
-// import { HomePage, sliderLoader } from 'pages/home-page';
-// import { miceLoader, MicePage } from 'pages/mice-page';
-// import { mouseLoader, MousePage } from 'pages/mouse-page';
-// import { keyboardsLoader, KeyboardsPage } from 'pages/keyboards-page';
-// import { keyboardLoader, KeyboardPage } from 'pages/keyboard-page';
-// import { headsetsLoader, HeadsetsPage } from 'pages/headsets-page';
-// import { headsetLoader, HeadsetPage } from 'pages/headset-page';
-// import { bluetoothsLoader, BluetoothsPage } from 'pages/bluetooths-page';
-// import { bluetoothLoader, BluetoothPage } from 'pages/bluetooth-page';
-// import { accessoriesLoader, AccessoriesPage } from 'pages/accessories-page';
-// import { accessoryLoader, AccessoryPage } from 'pages/accessory-page';
-// import { About, aboutLoader } from 'pages/about';
-// import { Support, supportLoader } from 'pages/support';
-// import { PressCenter, pressCenterLoader } from 'pages/press-center';
-// import {
-//   PressCenterNews,
-//   pressCenterNewsLoader,
-// } from 'pages/press-center-news';
-// import { Gallery, galleryLoader } from 'pages/gallery';
-// import { Download, DownloadLoader } from 'pages/download';
-// import { Shop } from 'pages/shop';
-
 // ===== static imports /start/ =====
 import { Layout } from 'components/business/layout';
-import { NotFoundPage } from 'pages/not-found-page/not-found-page';
-import { ErrorPage } from 'pages/error-page/error-page';
-import { ErrorBoundary } from 'react-error-boundary';
+import { Spinner } from 'components/ui/spinner';
 // ===== static imports /end/ =====
 
 // ===== imports function loading data /start/ =====
@@ -52,8 +28,6 @@ import { pressCenterLoader } from 'pages/press-center/press-center';
 import { pressCenterNewsLoader } from 'pages/press-center-news/press-center-news';
 import { galleryLoader } from 'pages/gallery/gallery';
 import { DownloadLoader } from 'pages/download/download';
-// ===== imports function loading data /end/ =====
-
 // ===== lazy imports /start/ =====
 const HomePage = lazy(() => import('pages/home-page/home-page'));
 const MicePage = lazy(() => import('pages/mice-page/mice-page'));
@@ -79,9 +53,11 @@ const PressCenterNews = lazy(
 const Gallery = lazy(() => import('pages/gallery/gallery'));
 const Download = lazy(() => import('pages/download/download'));
 const Shop = lazy(() => import('pages/shop/shop'));
+// ===== add imports lazy =====
+const NotFoundPage = lazy(() => import('pages/not-found-page/not-found-page'));
+const ErrorPage = lazy(() => import('pages/error-page/error-page'));
 // ===== lazy imports /end/ =====
 
-// ===== imports components  =====
 import { ErrorFallback } from '../error-fallback';
 
 export const router = createBrowserRouter(
@@ -91,7 +67,9 @@ export const router = createBrowserRouter(
         index
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <HomePage />
+            <Suspense fallback={<Spinner />}>
+              <HomePage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={sliderLoader}
@@ -100,7 +78,9 @@ export const router = createBrowserRouter(
         path="mice"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <MicePage />
+            <Suspense fallback={<Spinner />}>
+              <MicePage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={miceLoader}
@@ -109,7 +89,9 @@ export const router = createBrowserRouter(
         path="mice/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <MousePage />
+            <Suspense fallback={<Spinner />}>
+              <MousePage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={mouseLoader}
@@ -118,7 +100,9 @@ export const router = createBrowserRouter(
         path="keyboards"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <KeyboardsPage />
+            <Suspense fallback={<Spinner />}>
+              <KeyboardsPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={keyboardsLoader}
@@ -127,7 +111,9 @@ export const router = createBrowserRouter(
         path="keyboards/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <KeyboardPage />
+            <Suspense fallback={<Spinner />}>
+              <KeyboardPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={keyboardLoader}
@@ -136,7 +122,9 @@ export const router = createBrowserRouter(
         path="headsets"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <HeadsetsPage />
+            <Suspense fallback={<Spinner />}>
+              <HeadsetsPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={headsetsLoader}
@@ -145,7 +133,9 @@ export const router = createBrowserRouter(
         path="headsets/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <HeadsetPage />
+            <Suspense fallback={<Spinner />}>
+              <HeadsetPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={headsetLoader}
@@ -154,7 +144,9 @@ export const router = createBrowserRouter(
         path="bluetooth"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <BluetoothsPage />
+            <Suspense fallback={<Spinner />}>
+              <BluetoothsPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={bluetoothsLoader}
@@ -163,7 +155,9 @@ export const router = createBrowserRouter(
         path="bluetooth/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <BluetoothPage />
+            <Suspense fallback={<Spinner />}>
+              <BluetoothPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={bluetoothLoader}
@@ -172,7 +166,9 @@ export const router = createBrowserRouter(
         path="accessories"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <AccessoriesPage />
+            <Suspense fallback={<Spinner />}>
+              <AccessoriesPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={accessoriesLoader}
@@ -181,7 +177,9 @@ export const router = createBrowserRouter(
         path="accessories/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <AccessoryPage />
+            <Suspense fallback={<Spinner />}>
+              <AccessoryPage />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={accessoryLoader}
@@ -190,7 +188,9 @@ export const router = createBrowserRouter(
         path="about"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <About />
+            <Suspense fallback={<Spinner />}>
+              <About />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={aboutLoader}
@@ -199,7 +199,9 @@ export const router = createBrowserRouter(
         path="support"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Support />
+            <Suspense fallback={<Spinner />}>
+              <Support />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={supportLoader}
@@ -208,7 +210,9 @@ export const router = createBrowserRouter(
         path="press-center"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <PressCenter />
+            <Suspense fallback={<Spinner />}>
+              <PressCenter />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={pressCenterLoader}
@@ -217,7 +221,9 @@ export const router = createBrowserRouter(
         path="press-center/:id"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <PressCenterNews />
+            <Suspense fallback={<Spinner />}>
+              <PressCenterNews />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={pressCenterNewsLoader}
@@ -226,7 +232,9 @@ export const router = createBrowserRouter(
         path="gallery"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Gallery />
+            <Suspense fallback={<Spinner />}>
+              <Gallery />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={galleryLoader}
@@ -235,7 +243,9 @@ export const router = createBrowserRouter(
         path="download"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Download />
+            <Suspense fallback={<Spinner />}>
+              <Download />
+            </Suspense>
           </ErrorBoundary>
         }
         loader={DownloadLoader}
@@ -244,7 +254,9 @@ export const router = createBrowserRouter(
         path="shop"
         element={
           <ErrorBoundary FallbackComponent={ErrorFallback}>
-            <Shop />
+            <Suspense fallback={<Spinner />}>
+              <Shop />
+            </Suspense>
           </ErrorBoundary>
         }
       />

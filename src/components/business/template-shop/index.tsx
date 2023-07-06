@@ -1,1 +1,3 @@
-export * from './template-shop';
+import TemplateShop from './template-shop';
+
+export { TemplateShop };

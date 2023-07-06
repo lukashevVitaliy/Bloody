@@ -11,7 +11,7 @@ interface IAccordionSeries {
   setSelectSeries: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionSeries: FC<IAccordionSeries> = memo(
+const AccordionSeries: FC<IAccordionSeries> = memo(
   ({ uniqueSeries, accordionSeries, onClick, setSelectSeries }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionSeries: FC<IAccordionSeries> = memo(
     );
   }
 );
+
+export default AccordionSeries;

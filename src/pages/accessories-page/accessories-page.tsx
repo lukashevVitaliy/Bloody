@@ -5,16 +5,38 @@ import {
   useRef,
   useSearchParams,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-import { ListProducts } from 'components/business/list-products';
+
+// ===== static imports /start/ =====
 import { getAccessoriesCategory } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
-import { AccordionСategoryAccessories } from 'components/ui/accordion-category-accessories';
 import { RenderItemList } from 'components/business/render-item-list';
+// import { TopBlock } from 'components/business/top-block';
+// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+// import { ListProducts } from 'components/business/list-products';
+// import { AccordionСategoryAccessories } from 'components/ui/accordion-category-accessories';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const ListProducts = lazy(
+  () => import('components/business/list-products/list-products')
+);
+const SidebarMenuLeft = lazy(
+  () => import('components/business/sidebar-menu-left/sidebar-menu-left')
+);
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const AccordionСategoryAccessories = lazy(
+  () =>
+    import(
+      'components/ui/accordion-category-accessories/accordion-category-accessories'
+    )
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IAccessories } from 'types/components-types';
-import Footer from 'components/business/footer/footer';
 
 const AccessoriesPage = () => {
   const [accordionCategory, setActiveAccordionCategory] =

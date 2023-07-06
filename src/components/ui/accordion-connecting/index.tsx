@@ -1,1 +1,3 @@
-export * from './accordion-connecting';
+import AccordionConnecting from './accordion-connecting';
+
+export { AccordionConnecting };

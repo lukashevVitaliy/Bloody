@@ -1,1 +1,3 @@
-export * from './accordion-speakers';
+import AccordionSpeakers from './accordion-speakers';
+
+export { AccordionSpeakers };

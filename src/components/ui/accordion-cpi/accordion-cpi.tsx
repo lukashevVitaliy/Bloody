@@ -11,7 +11,7 @@ interface IAccordionCPI {
   setSelectCPI: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionCPI: FC<IAccordionCPI> = memo(
+const AccordionCPI: FC<IAccordionCPI> = memo(
   ({ uniqueCPI, accordionCPI, onClick, setSelectCPI }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionCPI: FC<IAccordionCPI> = memo(
     );
   }
 );
+
+export default AccordionCPI;

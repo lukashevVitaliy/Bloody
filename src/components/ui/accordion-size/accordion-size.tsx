@@ -11,7 +11,7 @@ interface IAccordionSize {
   setSelectSize: React.Dispatch<React.SetStateAction<null | string>>;
 }
 
-export const AccordionSize: FC<IAccordionSize> = memo(
+const AccordionSize: FC<IAccordionSize> = memo(
   ({ uniqueSize, accordionSize, onClick, setSelectSize }) => {
     return (
       <>
@@ -36,3 +36,5 @@ export const AccordionSize: FC<IAccordionSize> = memo(
     );
   }
 );
+
+export default AccordionSize;

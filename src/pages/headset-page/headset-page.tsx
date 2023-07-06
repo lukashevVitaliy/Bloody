@@ -1,19 +1,71 @@
-import { React, useRef, defer, useLoaderData } from 'services/imports-npm';
+import {
+  React,
+  useRef,
+  defer,
+  useLoaderData,
+  lazy,
+} from 'services/imports-npm';
 
-import { ListProductsThumbnail } from 'components/business/list-products-thumbnail';
-import { SectionMain } from 'components/business/section-main';
-import { SectionGallery } from 'components/business/section-gallery';
-import { SectionBg2 } from 'components/business/section-bg-2';
-import { SectionDescShort } from 'components/business/section-desc-short';
-import { SectionDesc } from 'components/business/section-desc';
-import { SectionBg3 } from 'components/business/section-bg-3';
-import { SectionSpecification } from 'components/business/section-specification';
-import { SectionSizeProduct } from 'components/business/section-size-product';
-import { ItemProductThumbnail } from 'components/business/item-product-thumbnail';
-import { HeadsetsSpecification } from 'components/business/section-specification/headsets-specification';
-import { Navbar } from 'components/business/navbar';
-import Footer from 'components/business/footer/footer';
+// ===== static imports /start/ =====
+// import { ListProductsThumbnail } from 'components/business/list-products-thumbnail';
+// import { SectionMain } from 'components/business/section-main';
+// import { SectionGallery } from 'components/business/section-gallery';
+// import { SectionBg2 } from 'components/business/section-bg-2';
+// import { SectionDescShort } from 'components/business/section-desc-short';
+// import { SectionDesc } from 'components/business/section-desc';
+// import { SectionBg3 } from 'components/business/section-bg-3';
+// import { SectionSpecification } from 'components/business/section-specification';
+// import { SectionSizeProduct } from 'components/business/section-size-product';
+// import { ItemProductThumbnail } from 'components/business/item-product-thumbnail';
+// import { HeadsetsSpecification } from 'components/business/section-specification/headsets-specification';
+// import { Navbar } from 'components/business/navbar';
+// import Footer from 'components/business/footer/footer';
 import { useScrollbar } from 'hooks/useScrollbar';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const ListProductsThumbnail = lazy(
+  () =>
+    import(
+      'components/business/list-products-thumbnail/list-products-thumbnail'
+    )
+);
+const SectionMain = lazy(
+  () => import('components/business/section-main/section-main')
+);
+const SectionGallery = lazy(
+  () => import('components/business/section-gallery/section-gallery')
+);
+const SectionBg2 = lazy(
+  () => import('components/business/section-bg-2/section-bg-2')
+);
+const SectionDescShort = lazy(
+  () => import('components/business/section-desc-short/section-desc-short')
+);
+const SectionDesc = lazy(
+  () => import('components/business/section-desc/section-desc')
+);
+const SectionBg3 = lazy(
+  () => import('components/business/section-bg-3/section-bg-3')
+);
+const SectionSpecification = lazy(
+  () =>
+    import('components/business/section-specification/section-specification')
+);
+const SectionSizeProduct = lazy(
+  () => import('components/business/section-size-product/section-size-product')
+);
+const ItemProductThumbnail = lazy(
+  () =>
+    import('components/business/item-product-thumbnail/item-product-thumbnail')
+);
+const HeadsetsSpecification = lazy(
+  () =>
+    import('components/business/section-specification/headsets-specification')
+);
+const Navbar = lazy(() => import('components/business/navbar/navbar'));
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
 
 import { headsetLoaderProps } from 'types/input-types';
 

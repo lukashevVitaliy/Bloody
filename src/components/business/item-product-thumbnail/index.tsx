@@ -1,1 +1,3 @@
-export * from './item-product-thumbnail';
+import ItemProductThumbnail from './item-product-thumbnail';
+
+export { ItemProductThumbnail };

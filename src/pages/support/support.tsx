@@ -4,12 +4,28 @@ import {
   useRef,
   useLoaderData,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import { FormSupport } from 'components/business/form-support';
-import { FormOfCooperation } from 'components/business/form-of-cooperation';
+
+// ===== static imports /start/ =====
 import { useScrollbar } from 'hooks/useScrollbar';
-import Footer from 'components/business/footer/footer';
+// import { TopBlock } from 'components/business/top-block';
+// import { FormSupport } from 'components/business/form-support';
+// import { FormOfCooperation } from 'components/business/form-of-cooperation';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const FormSupport = lazy(
+  () => import('components/business/form-support/form-support')
+);
+const FormOfCooperation = lazy(
+  () => import('components/business/form-of-cooperation/form-of-cooperation')
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { ISupportPage } from 'types/components-types';
 
 const Support = () => {

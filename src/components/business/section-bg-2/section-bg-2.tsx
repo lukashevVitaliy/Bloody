@@ -1,7 +1,7 @@
 import { React, forwardRef } from 'services/imports-npm';
 import { ISectionBg2 } from 'types/components-types';
 
-export const SectionBg2 = forwardRef<HTMLDivElement, ISectionBg2>(
+const SectionBg2 = forwardRef<HTMLDivElement, ISectionBg2>(
   ({ background }, ref) => {
     return (
       <div
@@ -18,3 +18,5 @@ export const SectionBg2 = forwardRef<HTMLDivElement, ISectionBg2>(
     );
   }
 );
+
+export default SectionBg2;

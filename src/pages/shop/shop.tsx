@@ -1,6 +1,15 @@
-import { React, useRef } from 'services/imports-npm';
-import { TemplateShop } from 'components/business/template-shop';
+import { lazy, React, useRef } from 'services/imports-npm';
+
+// ===== static imports /start/ =====
 import { useScrollbar } from 'hooks/useScrollbar';
+// import { TemplateShop } from 'components/business/template-shop';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TemplateShop = lazy(
+  () => import('components/business/template-shop/template-shop')
+);
+// ===== lazy imports /end/ =====
 
 import citylink from '../../assets/icons/shops/citylink_logo.png';
 import ozon from '../../assets/icons/shops/ozon_logo.png';

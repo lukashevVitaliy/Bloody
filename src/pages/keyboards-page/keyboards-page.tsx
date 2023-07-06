@@ -5,10 +5,10 @@ import {
   useRef,
   useSearchParams,
   defer,
+  lazy,
 } from 'services/imports-npm';
-import { TopBlock } from 'components/business/top-block';
-import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-import { ListProducts } from 'components/business/list-products';
+
+// ===== static imports /start/ =====
 import {
   getKeyboardBacklightingTypes,
   getKeyboardKeyGhost,
@@ -16,12 +16,40 @@ import {
   getKeyboardSwitchTypes,
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
-import { AccordionSwitch } from 'components/ui/accordion-switch';
-import { AccordionBacklighting } from 'components/ui/accordion-backlighting';
-import { AccordionNumberOfKey } from 'components/ui/accordion-number-of-key';
-import { AccordionKeyGhost } from 'components/ui/accordion-key-ghost';
 import { RenderItemList } from 'components/business/render-item-list';
-import Footer from 'components/business/footer/footer';
+// import { TopBlock } from 'components/business/top-block';
+// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
+// import { ListProducts } from 'components/business/list-products';
+// import { AccordionSwitch } from 'components/ui/accordion-switch';
+// import { AccordionBacklighting } from 'components/ui/accordion-backlighting';
+// import { AccordionNumberOfKey } from 'components/ui/accordion-number-of-key';
+// import { AccordionKeyGhost } from 'components/ui/accordion-key-ghost';
+// import Footer from 'components/business/footer/footer';
+// ===== static imports /end/ =====
+
+// ===== lazy imports /start/ =====
+const TopBlock = lazy(() => import('components/business/top-block/top-block'));
+const SidebarMenuLeft = lazy(
+  () => import('components/business/sidebar-menu-left/sidebar-menu-left')
+);
+const ListProducts = lazy(
+  () => import('components/business/list-products/list-products')
+);
+const AccordionSwitch = lazy(
+  () => import('components/ui/accordion-switch/accordion-switch')
+);
+const AccordionBacklighting = lazy(
+  () => import('components/ui/accordion-backlighting/accordion-backlighting')
+);
+const AccordionNumberOfKey = lazy(
+  () => import('components/ui/accordion-number-of-key/accordion-number-of-key')
+);
+const AccordionKeyGhost = lazy(
+  () => import('components/ui/accordion-key-ghost/accordion-key-ghost')
+);
+const Footer = lazy(() => import('components/business/footer/footer'));
+// ===== lazy imports /end/ =====
+
 import { IKeyboards } from 'types/components-types';
 
 const KeyboardsPage = () => {

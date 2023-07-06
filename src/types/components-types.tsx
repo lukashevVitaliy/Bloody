@@ -721,6 +721,7 @@ export interface IGalleryPage {
       titleSection: string;
       images: {
         data: {
+          id: number;
           attributes: {
             caption: string;
             url: string;

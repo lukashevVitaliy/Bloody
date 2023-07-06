@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { React, memo, Link } from 'services/imports-npm';
 import { IItemProductThumbnail } from 'types/components-types';
 
-export const ItemProductThumbnail: FC<IItemProductThumbnail> = memo(
+const ItemProductThumbnail: FC<IItemProductThumbnail> = memo(
   ({ classes, path, urlImageItem, modelItem, ...attrs }) => {
     return (
       <li className={`${classes}`} {...attrs}>
@@ -16,3 +16,5 @@ export const ItemProductThumbnail: FC<IItemProductThumbnail> = memo(
     );
   }
 );
+
+export default ItemProductThumbnail;
