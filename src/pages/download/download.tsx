@@ -9,9 +9,6 @@ import {
 
 // ===== static imports /start/ =====
 import { useScrollbar } from 'hooks/useScrollbar';
-// import { TopBlock } from 'components/business/top-block';
-// import { DownloadTemplate } from 'components/business/download-template';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====
@@ -54,21 +51,21 @@ const Download = () => {
                 (
                   { name, version, update, image, description, info, links },
                   i
-                ) => (
-                  <DownloadTemplate
-                    key={i}
-                    name={name}
-                    version={version}
-                    update={update}
-                    image={`${import.meta.env.VITE_STRAPI_URL}${
-                      image?.data?.attributes.url
-                    }`}
-                    description={description}
-                    info={info}
-                    link={links[0].href}
-                    label={links[0].label}
-                  />
-                )
+                ) => {
+                  return (
+                    <DownloadTemplate
+                      key={i}
+                      name={name}
+                      version={version}
+                      update={update}
+                      image={image}
+                      description={description}
+                      info={info}
+                      link={links[0].href}
+                      label={links[0].label}
+                    />
+                  );
+                }
               )}
           </div>
         </div>

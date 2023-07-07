@@ -356,7 +356,14 @@ export interface IDownloadTemplate {
   name: string;
   version: string;
   update: string;
-  image: string;
+  image: {
+    data: {
+      id: number;
+      attributes: {
+        url: string;
+      };
+    }[];
+  };
   description: string;
   info: string;
   link: string;
@@ -701,11 +708,12 @@ export interface IDownload {
         }[];
         image: {
           data: {
+            id: number;
             attributes: {
               url: string;
             };
-          };
-        }[];
+          }[];
+        };
         subtitle_1: string | null;
         subtitle_2: string | null;
         subtitle_3: string | null;
@@ -832,6 +840,7 @@ export interface IPressCenterNewsTwo {
       titleSection: string;
       image: {
         data: {
+          id: number;
           attributes: {
             formats: {
               large: {
@@ -849,7 +858,7 @@ export interface IPressCenterNewsTwo {
             };
             url: string;
           };
-        };
+        }[];
       };
       info: {
         id: number;
