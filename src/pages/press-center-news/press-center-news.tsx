@@ -5,6 +5,8 @@ import {
   useLoaderData,
   ReactMarkdown,
   lazy,
+  useEffect,
+  useState,
 } from 'services/imports-npm';
 
 // ===== static imports /start/ =====
@@ -13,8 +15,6 @@ import {
   getPressCenterNews,
 } from 'services/request-press-center-news';
 import { useScrollbar } from 'hooks/useScrollbar';
-// import { TopBlock } from 'components/business/top-block';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====
@@ -27,8 +27,28 @@ import { IPressCenterNews } from 'types/components-types';
 
 const PressCenterNews = () => {
   const { pressCenter, newsPressCenter } = useLoaderData() as IPressCenterNews;
+  const [isWebPSupported, setIsWebPSupported] = useState<boolean>(false);
+
+  // Определение поддержки формата WebP
+  useEffect(() => {
+    const checkWebPSupport = () => {
+      return new Promise((res) => {
+        const webP = new Image();
+        webP.src =
+          'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        webP.onload = webP.onerror = () => {
+          res(webP.height === 2);
+        };
+      });
+    };
+
+    checkWebPSupport().then((hasWebP) => {
+      setIsWebPSupported(hasWebP);
+    });
+  }, []);
 
   const content = newsPressCenter.data.attributes;
+  const imageUrlArray = newsPressCenter.data.attributes.image.data;
 
   // custom scroll
   const contentWrapper = useRef<HTMLDivElement | null>(null);
@@ -52,15 +72,20 @@ const PressCenterNews = () => {
             {content.titleNews}
           </h3>
           <p className="mb-3 text-sm">{content.textTop}</p>
-          <div className="mx-auto mb-3 w-full">
-            <img
-              src={`${import.meta.env.VITE_STRAPI_URL}${
-                content.image.data.attributes.formats.medium.url
-              }`}
-              alt="news info"
-              className="w-full object-cover"
-            />
-          </div>
+          {imageUrlArray.map(({ id, attributes }) => {
+            const shouldRender =
+              (isWebPSupported && attributes.url.indexOf('.webp') !== -1) ||
+              (!isWebPSupported && attributes.url.indexOf('.webp') === -1);
+            return shouldRender ? (
+              <div key={id} className="mx-auto mb-3 w-full">
+                <img
+                  src={`${import.meta.env.VITE_STRAPI_URL}${attributes.url}`}
+                  alt="news info"
+                  className="w-full object-cover"
+                />
+              </div>
+            ) : null;
+          })}
           {content.info.map(({ id, titleBlock, textBlock }) => (
             <div key={id}>
               <p className="my-3 text-sm font-bold">{titleBlock}</p>
