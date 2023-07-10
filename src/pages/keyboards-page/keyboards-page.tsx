@@ -17,14 +17,6 @@ import {
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
 import { RenderItemList } from 'components/business/render-item-list';
-// import { TopBlock } from 'components/business/top-block';
-// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-// import { ListProducts } from 'components/business/list-products';
-// import { AccordionSwitch } from 'components/ui/accordion-switch';
-// import { AccordionBacklighting } from 'components/ui/accordion-backlighting';
-// import { AccordionNumberOfKey } from 'components/ui/accordion-number-of-key';
-// import { AccordionKeyGhost } from 'components/ui/accordion-key-ghost';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====
@@ -75,8 +67,6 @@ const KeyboardsPage = () => {
   const productQuery = searchParams.get('product') || '';
   // get products
   const { keyboards } = useLoaderData() as { keyboards: IKeyboards };
-
-  // console.log(keyboards);
 
   const uniqueSwitch = getKeyboardSwitchTypes(keyboards);
   const uniqueBacklighting = getKeyboardBacklightingTypes(keyboards);

@@ -57,7 +57,7 @@ export interface ItemProductProps {
   attributes?: object | undefined;
   classes: string;
   path: string;
-  urlImageItem: string;
+  urlImageArray: string;
   modelItem: string;
   titleItem: string;
 }
@@ -411,7 +411,7 @@ export interface IMice {
               };
             };
           };
-        };
+        }[];
       };
     };
   }[];

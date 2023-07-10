@@ -17,14 +17,6 @@ import {
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
 import { RenderItemList } from 'components/business/render-item-list';
-// import { ListProducts } from 'components/business/list-products';
-// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-// import { TopBlock } from 'components/business/top-block';
-// import { AccordionSpeakers } from 'components/ui/accordion-speakers';
-// import { AccordionConnecting } from 'components/ui/accordion-connecting';
-// import { AccordionHeadband } from 'components/ui/accordion-headband';
-// import { AccordionIllumination } from 'components/ui/accordion-illumination';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====
@@ -74,8 +66,6 @@ const HeadsetsPage = () => {
   const productQuery = searchParams.get('product') || '';
   // get products
   const { headsets } = useLoaderData() as { headsets: IHeadsets };
-
-  // console.log(headsets);
 
   const uniqueSpeakers = getHeadsetsSpeakers(headsets);
   const uniqueConnecting = getHeadsetsConnecting(headsets);

@@ -15,12 +15,6 @@ import {
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
 import { RenderItemList } from 'components/business/render-item-list';
-// import { TopBlock } from 'components/business/top-block';
-// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-// import { ListProducts } from 'components/business/list-products';
-// import { AccordionMode } from 'components/ui/accordion-mode';
-// import { AccordionNoiceReduction } from 'components/ui/accordion-noice-reduction';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====

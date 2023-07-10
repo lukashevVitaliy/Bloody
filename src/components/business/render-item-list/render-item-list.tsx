@@ -7,9 +7,7 @@ export const RenderItemList = (items) => {
     <ItemProduct
       key={id}
       path={`${attributes.slug}`}
-      urlImageItem={`${import.meta.env.VITE_STRAPI_URL}${
-        attributes.image.data.attributes.formats.small.url
-      }`}
+      urlImageArray={attributes.image}
       modelItem={attributes.model}
       titleItem={attributes.title}
       classes="border border-[var(--black-col-4)] p-1 text-center transition-all 

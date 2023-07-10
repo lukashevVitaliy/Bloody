@@ -16,13 +16,6 @@ import {
 } from 'components/ui/accordion/unique-data';
 import { useScrollbar } from 'hooks/useScrollbar';
 import { RenderItemList } from 'components/business/render-item-list';
-// import { ListProducts } from 'components/business/list-products';
-// import { SidebarMenuLeft } from 'components/business/sidebar-menu-left';
-// import { TopBlock } from 'components/business/top-block';
-// import { AccordionCPI } from 'components/ui/accordion-cpi';
-// import { AccordionSize } from 'components/ui/accordion-size';
-// import { AccordionSeries } from 'components/ui/accordion-series';
-// import Footer from 'components/business/footer/footer';
 // ===== static imports /end/ =====
 
 // ===== lazy imports /start/ =====
@@ -59,8 +52,6 @@ const MicePage = () => {
   const productQuery = searchParams.get('product') || '';
   // get products
   const { mice } = useLoaderData() as { mice: IMice };
-
-  // console.log(mice);
 
   const uniqueCPI = UniqueCpi(mice);
   const uniqueSize = UniqueSize(mice);
