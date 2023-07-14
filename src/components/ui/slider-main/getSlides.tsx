@@ -1,6 +1,9 @@
+import { React, useState, useEffect } from 'services/imports-npm';
 import { useLoaderData } from 'services/imports-npm';
 
 export const getSlides = () => {
+  const [isWebPSupported, setIsWebPSupported] = useState<boolean>(false);
+
   const {
     mouse,
     mouseName,
@@ -16,12 +19,36 @@ export const getSlides = () => {
     accessoryName,
   } = useLoaderData();
 
+  // Определение поддержки формата WebP
+  useEffect(() => {
+    const checkWebPSupport = () => {
+      return new Promise((res) => {
+        const webP = new Image();
+        webP.src =
+          'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+        webP.onload = webP.onerror = () => {
+          res(webP.height === 2);
+        };
+      });
+    };
+
+    checkWebPSupport().then((hasWebP) => {
+      setIsWebPSupported(hasWebP);
+    });
+  }, []);
+
   const slides = [
     {
       id: 1,
-      title: `${mouseName?.data.attributes.model} ${mouseName?.data.attributes.subtitle}`,
+      title: `${mouseName?.data?.attributes.model} ${mouseName?.data?.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        mouse?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? mouse?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : mouse?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: mouse.data?.attributes.slug,
       path: 'mice/',
@@ -30,7 +57,13 @@ export const getSlides = () => {
       id: 2,
       title: `${keyboardName_1?.data.attributes.model} ${keyboardName_1?.data.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        keyboard_1?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? keyboard_1?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : keyboard_1?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: keyboard_1?.data.attributes.slug,
       path: 'keyboards/',
@@ -39,7 +72,13 @@ export const getSlides = () => {
       id: 3,
       title: `${headsetName?.data.attributes.model} ${headsetName?.data.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        headset?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? headset?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : headset?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: headset?.data.attributes.slug,
       path: 'headsets/',
@@ -48,7 +87,13 @@ export const getSlides = () => {
       id: 4,
       title: `${bluetoothName?.data.attributes.model} ${bluetoothName?.data.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        bluetooth?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? bluetooth?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : bluetooth?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: bluetooth?.data.attributes.slug,
       path: 'bluetooth/',
@@ -57,7 +102,13 @@ export const getSlides = () => {
       id: 5,
       title: `${accessoryName?.data.attributes.model} ${accessoryName?.data.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        accessory?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? accessory?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : accessory?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: accessory?.data.attributes.slug,
       path: 'accessories/',
@@ -66,7 +117,13 @@ export const getSlides = () => {
       id: 6,
       title: `${keyboardName_2?.data.attributes.model} ${keyboardName_2?.data.attributes.subtitle}`,
       url: `${import.meta.env.VITE_STRAPI_URL}${
-        keyboard_2?.data.attributes.bg_content_1.data.attributes.url
+        isWebPSupported
+          ? keyboard_2?.data.attributes.bg_content_1.data.find((image) =>
+              image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
+          : keyboard_2?.data.attributes.bg_content_1.data.find(
+              (image) => !image.attributes.url.endsWith('.webp')
+            )?.attributes.url || ''
       }`,
       slug: keyboard_2?.data.attributes.slug,
       path: 'keyboards/',

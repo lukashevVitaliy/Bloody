@@ -27,7 +27,7 @@ export const ItemProduct: FC<ItemProductProps> = memo(
     return (
       <Link to={path} className={`group ${classes}`} {...attrs}>
         {urlImageArray.data?.map(({ id, attributes }) => {
-          const imageUrl = attributes.url;
+          const imageUrl = attributes?.url;
 
           const shouldRender =
             (isWebPSupported && imageUrl.indexOf('.webp') !== -1) ||
