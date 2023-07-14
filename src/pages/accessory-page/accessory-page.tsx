@@ -7,19 +7,6 @@ import {
 } from 'services/imports-npm';
 
 // ===== static imports /start/ =====
-// import { ListProductsThumbnail } from 'components/business/list-products-thumbnail';
-// import { SectionMain } from 'components/business/section-main';
-// import { SectionGallery } from 'components/business/section-gallery';
-// import { SectionBg2 } from 'components/business/section-bg-2';
-// import { SectionDescShort } from 'components/business/section-desc-short';
-// import { SectionDesc } from 'components/business/section-desc';
-// import { SectionBg3 } from 'components/business/section-bg-3';
-// import { SectionSpecification } from 'components/business/section-specification';
-// import { SectionSizeProduct } from 'components/business/section-size-product';
-// import { ItemProductThumbnail } from 'components/business/item-product-thumbnail';
-// import { AccessoriesSpecification } from 'components/business/section-specification/accessories-specification';
-// import { Navbar } from 'components/business/navbar';
-// import Footer from 'components/business/footer/footer';
 import { useScrollbar } from 'hooks/useScrollbar';
 // ===== static imports /end/ =====
 
@@ -82,28 +69,11 @@ import {
   getAccessoryIdShortDesc,
   getAccessoryIdSize,
 } from 'services/requests-accessories';
-import {
-  IAccessories,
-  IItemBackground,
-  IItemName,
-  IItemSize,
-} from 'types/components-types';
-
-interface IAccessoryPage {
-  accesory: IAccessories;
-  accesoryName: IItemName;
-  background: IItemBackground;
-  colors: any;
-  shortDesc: any;
-  desc: any;
-  size: IItemSize;
-}
+import { IAccessoryPage } from 'types/components-types';
 
 const AccessoryPage = () => {
   const { accesory, accesoryName, background, colors, shortDesc, desc, size } =
     useLoaderData() as unknown as IAccessoryPage;
-
-  // console.log(size);
 
   const colorsScheme = colors?.data.attributes.accessoryColorsScheme;
   const shortDescPath = shortDesc?.data.attributes.accessoryShortDesc;
@@ -132,12 +102,8 @@ const AccessoryPage = () => {
           {accesory?.data.map(({ id, attributes }) => (
             <ItemProductThumbnail
               key={id}
-              id={id}
-              attributes={attributes}
               path={`/accessories/${attributes.slug}`}
-              urlImageItem={`${import.meta.env.VITE_STRAPI_URL}${
-                attributes.image.data.attributes.formats.thumbnail?.url
-              }`}
+              urlImageItemArray={attributes.image}
               modelItem={attributes.model}
               classes="group w-full p-1 text-center grayscale transition-all duration-300 hover:grayscale-0"
             />

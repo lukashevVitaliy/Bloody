@@ -95,17 +95,15 @@ const KeyboardPage = () => {
         ref={listWrapper}
       >
         <ListProductsThumbnail classes={'w-full'}>
-          {keyboards?.data.map(({ id, attributes }) => {
-            return (
-              <ItemProductThumbnail
-                key={id}
-                path={`/keyboards/${attributes.slug}`}
-                urlImageItemArray={attributes.image}
-                modelItem={attributes.model}
-                classes="group w-full p-1 text-center grayscale transition-all duration-300 hover:grayscale-0"
-              />
-            );
-          })}
+          {keyboards?.data.map(({ id, attributes }) => (
+            <ItemProductThumbnail
+              key={id}
+              path={`/keyboards/${attributes.slug}`}
+              urlImageItemArray={attributes.image}
+              modelItem={attributes.model}
+              classes="group w-full p-1 text-center grayscale transition-all duration-300 hover:grayscale-0"
+            />
+          ))}
         </ListProductsThumbnail>
       </div>
       <div

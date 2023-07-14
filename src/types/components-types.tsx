@@ -619,6 +619,7 @@ export interface IBluetooths {
       };
       image: {
         data: {
+          id: number;
           attributes: {
             url: string;
             formats: {
@@ -636,10 +637,20 @@ export interface IBluetooths {
               };
             };
           };
-        };
+        }[];
       };
     };
   }[];
+}
+
+export interface IBluetoothPage {
+  bluetooth: IBluetooths;
+  bluetoothName: IItemName;
+  background: IItemBackground;
+  colors: any;
+  shortDesc: any;
+  desc: any;
+  size: IItemSize;
 }
 
 export interface IAccessories {
@@ -655,6 +666,7 @@ export interface IAccessories {
       };
       image: {
         data: {
+          id: number;
           attributes: {
             url: string;
             formats: {
@@ -672,10 +684,20 @@ export interface IAccessories {
               };
             };
           };
-        };
+        }[];
       };
     };
   }[];
+}
+
+export interface IAccessoryPage {
+  accesory: IAccessories;
+  accesoryName: IItemName;
+  background: IItemBackground;
+  colors: any;
+  shortDesc: any;
+  desc: any;
+  size: IItemSize;
 }
 
 export interface IItemName {
