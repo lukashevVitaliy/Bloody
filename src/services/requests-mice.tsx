@@ -1,6 +1,8 @@
 async function getMiceThumbnail() {
   const response = await fetch(
-    `${import.meta.env.VITE_STRAPI_URL}/api/list-mice?populate=*`
+    `${
+      import.meta.env.VITE_STRAPI_URL
+    }/api/list-mice?populate=*&pagination[pageSize]=30`
   );
 
   if (!response.ok) {

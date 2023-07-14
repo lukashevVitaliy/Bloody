@@ -27,18 +27,16 @@ export const ItemProduct: FC<ItemProductProps> = memo(
     return (
       <Link to={path} className={`group ${classes}`} {...attrs}>
         {urlImageArray.data?.map(({ id, attributes }) => {
+          const imageUrl = attributes.url;
+
           const shouldRender =
-            (isWebPSupported &&
-              attributes.formats.small.url.indexOf('.webp') !== -1) ||
-            (!isWebPSupported &&
-              attributes.formats.small.url.indexOf('.webp') === -1);
+            (isWebPSupported && imageUrl.indexOf('.webp') !== -1) ||
+            (!isWebPSupported && imageUrl.indexOf('.webp') === -1);
 
           return shouldRender ? (
             <img
               key={id}
-              src={`${import.meta.env.VITE_STRAPI_URL}${
-                attributes.formats.small.url
-              }`}
+              src={`${import.meta.env.VITE_STRAPI_URL}${imageUrl}`}
               alt={modelItem}
               className="object-cover"
             />

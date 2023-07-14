@@ -57,7 +57,28 @@ export interface ItemProductProps {
   attributes?: object | undefined;
   classes: string;
   path: string;
-  urlImageArray: string;
+  urlImageArray: {
+    data: {
+      id: number;
+      attributes: {
+        url: string;
+        formats: {
+          large?: {
+            url: string;
+          };
+          medium?: {
+            url: string;
+          };
+          small?: {
+            url: string;
+          };
+          thumbnail?: {
+            url: string;
+          };
+        };
+      };
+    }[];
+  };
   modelItem: string;
   titleItem: string;
 }
@@ -70,7 +91,29 @@ export interface IListProductsThumbnail {
 export interface IItemProductThumbnail {
   classes: string;
   path: string;
-  urlImageItem: string;
+  urlImageItemArray: {
+    data: {
+      id: number;
+      attributes: {
+        url: string;
+        formats: {
+          large?: {
+            url: string;
+          };
+          medium?: {
+            url: string;
+          };
+          small?: {
+            url: string;
+          };
+          thumbnail?: {
+            url: string;
+          };
+        };
+      };
+    }[];
+  };
+
   modelItem: string;
 }
 
@@ -417,6 +460,16 @@ export interface IMice {
   }[];
 }
 
+export interface IMousePage {
+  mice: IMice;
+  mouseName: IItemName;
+  background: IItemBackground;
+  colors: IPanelColorItem;
+  shortDesc: ISectionDescShort;
+  desc: ISectionDesc;
+  size: IItemSize;
+}
+
 export interface IKeyboards {
   data: {
     id: number;
@@ -447,6 +500,7 @@ export interface IKeyboards {
       };
       image: {
         data: {
+          id: number;
           attributes: {
             url: string;
             formats: {
@@ -464,10 +518,20 @@ export interface IKeyboards {
               };
             };
           };
-        };
+        }[];
       };
     };
   }[];
+}
+
+export interface IKeyboardPage {
+  keyboards: IKeyboards;
+  keyboardName: IItemName;
+  background: IItemBackground;
+  colors: any;
+  shortDesc: any;
+  desc: ISectionDesc;
+  size: IItemSize;
 }
 
 export interface IHeadsets {
@@ -624,21 +688,21 @@ export interface IItemBackground {
           attributes: {
             url: string;
           };
-        };
+        }[];
       };
       bg_content_2: {
         data: {
           attributes: {
             url: string;
           };
-        };
+        }[];
       };
       bg_content_3: {
         data: {
           attributes: {
             url: string;
           };
-        };
+        }[];
       };
     };
   };
@@ -658,13 +722,6 @@ export interface IItemSize {
             url: string;
           };
         }[];
-      };
-      image2: {
-        data: {
-          attributes: {
-            url?: string;
-          };
-        };
       };
     };
   };
