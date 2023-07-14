@@ -568,6 +568,7 @@ export interface IHeadsets {
       };
       image: {
         data: {
+          id: number;
           attributes: {
             url: string;
             formats: {
@@ -585,10 +586,20 @@ export interface IHeadsets {
               };
             };
           };
-        };
+        }[];
       };
     };
   }[];
+}
+
+export interface IHeadsetPage {
+  headsets: IHeadsets;
+  headsetName: IItemName;
+  background: IItemBackground;
+  colors: any;
+  shortDesc: any;
+  desc: any;
+  size: IItemSize;
 }
 
 export interface IBluetooths {

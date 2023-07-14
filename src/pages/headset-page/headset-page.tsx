@@ -7,19 +7,6 @@ import {
 } from 'services/imports-npm';
 
 // ===== static imports /start/ =====
-// import { ListProductsThumbnail } from 'components/business/list-products-thumbnail';
-// import { SectionMain } from 'components/business/section-main';
-// import { SectionGallery } from 'components/business/section-gallery';
-// import { SectionBg2 } from 'components/business/section-bg-2';
-// import { SectionDescShort } from 'components/business/section-desc-short';
-// import { SectionDesc } from 'components/business/section-desc';
-// import { SectionBg3 } from 'components/business/section-bg-3';
-// import { SectionSpecification } from 'components/business/section-specification';
-// import { SectionSizeProduct } from 'components/business/section-size-product';
-// import { ItemProductThumbnail } from 'components/business/item-product-thumbnail';
-// import { HeadsetsSpecification } from 'components/business/section-specification/headsets-specification';
-// import { Navbar } from 'components/business/navbar';
-// import Footer from 'components/business/footer/footer';
 import { useScrollbar } from 'hooks/useScrollbar';
 // ===== static imports /end/ =====
 
@@ -68,7 +55,6 @@ const Footer = lazy(() => import('components/business/footer/footer'));
 // ===== lazy imports /end/ =====
 
 import { headsetLoaderProps } from 'types/input-types';
-
 import {
   getHeadsetsThumbnail,
   getHeadsetName,
@@ -79,28 +65,11 @@ import {
   getHeadsetIdInfo,
   getHeadsetIdSize,
 } from 'services/requests-headsets';
-import {
-  IHeadsets,
-  IItemBackground,
-  IItemName,
-  IItemSize,
-} from 'types/components-types';
-
-interface IHeadsetPage {
-  headsets: IHeadsets;
-  headsetName: IItemName;
-  background: IItemBackground;
-  colors: any;
-  shortDesc: any;
-  desc: any;
-  size: IItemSize;
-}
+import { IHeadsetPage } from 'types/components-types';
 
 const HeadsetPage = () => {
   const { headsets, headsetName, background, colors, shortDesc, desc, size } =
     useLoaderData() as unknown as IHeadsetPage;
-
-  // console.log(shortDesc);
 
   const colorsScheme = colors?.data.attributes.HeadsetColorsScheme;
   const shortDescPath = shortDesc?.data.attributes.HeadsetShortDesc;
@@ -130,9 +99,7 @@ const HeadsetPage = () => {
             <ItemProductThumbnail
               key={id}
               path={`/headsets/${attributes.slug}`}
-              urlImageItem={`${import.meta.env.VITE_STRAPI_URL}${
-                attributes.image.data.attributes.formats.thumbnail?.url
-              }`}
+              urlImageItemArray={attributes.image}
               modelItem={attributes.model}
               classes="group w-full p-1 text-center grayscale transition-all duration-300 hover:grayscale-0"
             />

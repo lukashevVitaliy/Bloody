@@ -75,8 +75,6 @@ const KeyboardPage = () => {
   const shortDescPath = shortDesc?.data.attributes.ShortDescKeyboad;
   const descPath = desc?.data.attributes.description;
 
-  // console.log(shortDesc);
-
   const listWrapper = useRef<HTMLDivElement | null>(null);
   const contentWrapper = useRef<HTMLDivElement | null>(null);
 
